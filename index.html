@@ -41,9 +41,11 @@ button{font-family:inherit;cursor:pointer}
 .hero-name{animation:spread 1.5s cubic-bezier(.2,.7,.2,1) both}
 @keyframes spread{from{opacity:0;letter-spacing:28px;filter:blur(5px)}}
 .hero-fade{animation:fade 1.2s ease both}
+.reveal .tl-item{opacity:0;transform:translateX(-18px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.reveal.in .tl-item{opacity:1;transform:none}
+.reveal .tl-line{transform:scaleY(0);transform-origin:top;transition:transform 1.4s cubic-bezier(.4,0,.2,1) .2s}.reveal.in .tl-line{transform:none}
 @keyframes cue{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}
 .cue{animation:cue 1.8s ease-in-out infinite}
-@media (prefers-reduced-motion: reduce){main *{animation:none!important}.reveal *,.reveal>*{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}}
+@media (prefers-reduced-motion: reduce){main *{animation:none!important}.reveal *,.reveal>*,.reveal .tl-item{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}}
 .bgm{position:fixed;top:14px;right:14px;z-index:10;width:44px;height:44px;border-radius:22px;border:1px solid #EED6D3;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;color:#2A2A28}
 </style>
 <style>[hidden]{display:none!important}html{-webkit-text-size-adjust:100%}body{background:#FFFFFF}</style>
@@ -136,8 +138,54 @@ button{font-family:inherit;cursor:pointer}
 <p style="margin: 0; font-size: 14px; line-height: 2; text-align: center"><span style="display: block; white-space: nowrap">2021년 여름, 여의도에서 처음 만나</span><span style="display: block; white-space: nowrap">일곱 해를 지나 이제 부부가 됩니다.</span></p>
 </section>
 
+<!-- STORY -->
+<section data-rv="s11" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #FCF2F1">
+<div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+<p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">OUR STORY</p>
+<h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">우리의 이야기</h2>
+</div>
+<div style="position: relative; width: 100%; max-width: 320px">
+<div aria-hidden="true" class="tl-line" style="position: absolute; left: 83px; top: 28px; bottom: 28px; width: 1px; background: #E2C3BE"></div>
+<div class="tl-item" style="display: grid; grid-template-columns: 72px 24px minmax(0, 1fr); align-items: center; min-height: 56px; transition-delay: 0.30s">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; letter-spacing: 1px; text-align: right; color: #B98A84">2021</span>
+<span style="display: flex; justify-content: center"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="font-size: 15px; color: #4A4A46; white-space: nowrap">여의도에서 처음 만났습니다</span>
+</div>
+<div class="tl-item" style="display: grid; grid-template-columns: 72px 24px minmax(0, 1fr); align-items: center; min-height: 56px; transition-delay: 0.42s">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; letter-spacing: 1px; text-align: right; color: #B98A84">2022</span>
+<span style="display: flex; justify-content: center"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="font-size: 15px; color: #4A4A46; white-space: nowrap">서로를 알아갔습니다</span>
+</div>
+<div class="tl-item" style="display: grid; grid-template-columns: 72px 24px minmax(0, 1fr); align-items: center; min-height: 56px; transition-delay: 0.54s">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; letter-spacing: 1px; text-align: right; color: #B98A84">2023</span>
+<span style="display: flex; justify-content: center"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="font-size: 15px; color: #4A4A46; white-space: nowrap">같은 계절을 함께 걸었습니다</span>
+</div>
+<div class="tl-item" style="display: grid; grid-template-columns: 72px 24px minmax(0, 1fr); align-items: center; min-height: 56px; transition-delay: 0.66s">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; letter-spacing: 1px; text-align: right; color: #B98A84">2024</span>
+<span style="display: flex; justify-content: center"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="font-size: 15px; color: #4A4A46; white-space: nowrap">서로의 내일이 되어 갔습니다</span>
+</div>
+<div class="tl-item" style="display: grid; grid-template-columns: 72px 24px minmax(0, 1fr); align-items: center; min-height: 56px; transition-delay: 0.78s">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; letter-spacing: 1px; text-align: right; color: #B98A84">2025</span>
+<span style="display: flex; justify-content: center"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="font-size: 15px; color: #4A4A46; white-space: nowrap">평생을 함께 그리기 시작했습니다</span>
+</div>
+<div class="tl-item" style="display: grid; grid-template-columns: 72px 24px minmax(0, 1fr); align-items: center; min-height: 56px; transition-delay: 0.90s">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; letter-spacing: 1px; text-align: right; color: #B98A84">2026</span>
+<span style="display: flex; justify-content: center"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="font-size: 15px; color: #4A4A46; white-space: nowrap">프로포즈를 받았습니다</span>
+</div>
+<div class="tl-item" style="display: grid; grid-template-columns: 72px 24px minmax(0, 1fr); align-items: center; min-height: 56px; transition-delay: 1.02s">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; letter-spacing: 1px; text-align: right; color: #A9706A">2027</span>
+<span style="display: flex; justify-content: center"><span style="width: 11px; height: 11px; border-radius: 6px; background: #C98F88"></span></span>
+<span style="font-size: 15px; font-weight: 700; color: #2A2A28; white-space: nowrap">저희, 결혼합니다</span>
+</div>
+</div>
+</section>
+
 <!-- CALENDAR -->
-<section data-rv="s5" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #FCF2F1">
+<section data-rv="s5" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">SAVE THE DATE</p>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">예식 일시</h2>
@@ -170,7 +218,7 @@ button{font-family:inherit;cursor:pointer}
 </section>
 
 <!-- PROGRAM -->
-<section data-rv="s6" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px">
+<section data-rv="s6" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #FCF2F1">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">PROGRAM</p>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">예식 안내</h2>
@@ -195,7 +243,7 @@ button{font-family:inherit;cursor:pointer}
 </section>
 
 <!-- GALLERY -->
-<section data-rv="s7" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #FCF2F1">
+<section data-rv="s7" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">GALLERY</p>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">우리의 순간</h2>
@@ -237,7 +285,7 @@ button{font-family:inherit;cursor:pointer}
 </section>
 
 <!-- LOCATION -->
-<section data-rv="s8" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px">
+<section data-rv="s8" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #FCF2F1">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">LOCATION</p>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">오시는 길</h2>
@@ -313,7 +361,7 @@ button{font-family:inherit;cursor:pointer}
 </section>
 
 <!-- ACCOUNTS -->
-<section data-rv="s9" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #FCF2F1">
+<section data-rv="s9" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">WITH GRATITUDE</p>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">마음 전하실 곳</h2>
@@ -382,7 +430,7 @@ button{font-family:inherit;cursor:pointer}
 </section>
 
 <!-- CLOSING -->
-<section data-rv="s10" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; text-align: center">
+<section data-rv="s10" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; text-align: center; background: #FCF2F1">
 <div style="width: 1px; height: 40px; background: #D9AFAA"></div>
 <p style="margin: 0; font-size: 16px; line-height: 1.8">서로의 가장 좋은 사람이 되어 살겠습니다.</p>
 <p style="margin: -16px 0 0; font-size: 14px; line-height: 1.9; color: #6B6B67">함께해 주시는 모든 분들께<br>깊이 감사드립니다.</p>
