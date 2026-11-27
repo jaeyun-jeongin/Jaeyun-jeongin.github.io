@@ -24,7 +24,7 @@ button{font-family:inherit;cursor:pointer}
 .reveal>*{opacity:0;transform:translateY(44px);transition:opacity .9s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
 .reveal.in>*{opacity:1;transform:none}
 .reveal>*:nth-child(2){transition-delay:.15s}.reveal>*:nth-child(3){transition-delay:.3s}.reveal>*:nth-child(4){transition-delay:.45s}.reveal>*:nth-child(n+5){transition-delay:.6s}
-.reveal .sec-en{letter-spacing:16px;transition:letter-spacing 1.4s cubic-bezier(.2,.8,.2,1)}.reveal.in .sec-en{letter-spacing:5px}
+.reveal .sec-ill{opacity:0;transform:translateY(12px) scale(.9);transition:opacity 1s ease,transform 1.1s cubic-bezier(.2,.8,.2,1)}.reveal.in .sec-ill{opacity:1;transform:none}
 .reveal .sec-ko{clip-path:inset(0 0 100% 0);transform:translateY(12px);transition:clip-path 1s cubic-bezier(.6,0,.2,1) .25s,transform 1s cubic-bezier(.2,.8,.2,1) .25s}.reveal.in .sec-ko{clip-path:inset(0 0 0 0);transform:none}
 .reveal .pic{transform:scale(.88);filter:blur(4px);transition:transform 1.3s cubic-bezier(.2,.8,.2,1) .3s,filter 1.3s ease .3s}.reveal.in .pic{transform:none;filter:none}
 .reveal .cal>span{opacity:0;transform:scale(.4);transition:opacity .5s ease,transform .6s cubic-bezier(.34,1.56,.64,1)}.reveal.in .cal>span{opacity:1;transform:none}
@@ -46,7 +46,7 @@ button{font-family:inherit;cursor:pointer}
 @keyframes cue{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}
 .cue{animation:cue 1.8s ease-in-out infinite}
 @media (prefers-reduced-motion: reduce){main *{animation:none!important}.reveal *,.reveal>*,.reveal .tl-item{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}}
-.bgm{position:fixed;top:14px;right:14px;z-index:10;width:44px;height:44px;border-radius:22px;border:1px solid #EED6D3;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;color:#2A2A28}
+.bgm{position:fixed;top:14px;right:14px;z-index:10;width:44px;height:44px;border-radius:22px;border:1px solid #E4E2DD;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;color:#2A2A28}
 </style>
 <style>[hidden]{display:none!important}html{-webkit-text-size-adjust:100%}body{background:#FFFFFF}</style>
 </head>
@@ -60,7 +60,7 @@ button{font-family:inherit;cursor:pointer}
 </button>
 <div id="viewer" role="dialog" aria-label="사진 크게 보기" style="position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 20; background: rgba(28,26,22,.94); display: none; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 20px; box-sizing: border-box">
 <button type="button" id="vClose" aria-label="닫기" style="position: absolute; top: 12px; left: 12px; width: 44px; height: 44px; border: 0; background: transparent; color: #FFFFFF"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
-<div style="width: 100%; max-width: 360px; aspect-ratio: 3 / 4; background: #F5E4E2; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #6B6B67" id="vImg">사진 1</div>
+<div style="width: 100%; max-width: 360px; aspect-ratio: 3 / 4; background: #EEEDE9; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #6B6B67" id="vImg">사진 1</div>
 <div style="display: flex; align-items: center; gap: 28px; color: #FFFFFF; font-size: 14px; letter-spacing: 2px">
 <button type="button" id="vPrev" aria-label="이전 사진" style="width: 44px; height: 44px; border: 0; background: transparent; color: #FFFFFF"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
 <span id="vCount">1 / 30</span>
@@ -70,28 +70,40 @@ button{font-family:inherit;cursor:pointer}
 
 <!-- COVER -->
 <section style="display: flex; flex-direction: column; align-items: center; padding: 72px 24px 64px; text-align: center">
+<div class="hero-fade" style="margin-bottom: 22px; animation-delay: .1s"><svg width="96" height="84" viewBox="0 0 96 84" aria-hidden="true" fill="none" stroke="#2A2A28" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+<g transform="rotate(14 34 46)"><path d="M24 14 C23 30 27 40 34 42 C41 40 45 30 44 14 Z"/><path d="M26.5 24 C30 25.5 38 25.5 41.5 24"/><path d="M34 42 L34 66"/><path d="M26 67 C30 65.5 38 65.5 42 67"/><circle cx="31" cy="31" r="0.9"/><circle cx="36" cy="35" r="0.7"/><circle cx="33" cy="28" r="0.6"/></g>
+<g transform="rotate(-14 62 46)"><path d="M52 14 C51 30 55 40 62 42 C69 40 73 30 72 14 Z"/><path d="M54.5 24 C58 25.5 66 25.5 69.5 24"/><path d="M62 42 L62 66"/><path d="M54 67 C58 65.5 66 65.5 70 67"/><circle cx="65" cy="31" r="0.9"/><circle cx="60" cy="35" r="0.7"/></g>
+<path d="M48 4 L48 9 M45.5 6.5 L50.5 6.5"/><path d="M40 7 L41.5 9.5 M56 7 L54.5 9.5"/>
+<path d="M38 70 C34 75 30 76 27 74 M58 70 C62 75 66 76 69 74" stroke-width="1"/>
+</svg></div>
 <h1 style="margin: 0; font-family: 'Gowun Batang', serif; font-weight: 400; font-size: 27px; letter-spacing: 5px; color: #2A2A28"><span class="ch" style="animation-delay: 0.30s">저</span><span class="ch" style="animation-delay: 0.39s">희</span><span class="ch" style="animation-delay: 0.48s">,</span><span class="ch" style="animation-delay: 0.57s">&#160;</span><span class="ch" style="animation-delay: 0.66s">결</span><span class="ch" style="animation-delay: 0.75s">혼</span><span class="ch" style="animation-delay: 0.84s">합</span><span class="ch" style="animation-delay: 0.93s">니</span><span class="ch" style="animation-delay: 1.02s">다</span></h1>
-<div class="hero-photo" style="width: 100%; max-width: 330px; height: 440px; margin-top: 36px; background: #F5E4E2">
+<div class="hero-photo" style="width: 100%; max-width: 330px; height: 440px; margin-top: 36px; background: #EEEDE9">
 <div class="hero-img" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #6B6B67">[메인 사진]</div>
 </div>
-<div class="hero-line" style="width: 1px; height: 44px; margin-top: 36px; background: #D9AFAA"></div>
+<div class="hero-line" style="width: 1px; height: 44px; margin-top: 36px; background: #CFCDC8"></div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 28px">
 <p class="hero-name" style="margin: 0; font-size: 28px; letter-spacing: 12px; padding-left: 12px; animation-delay: 2.90s">방재윤</p>
 <p class="hero-fade" style="margin: 0; font-size: 14px; letter-spacing: 8px; padding-left: 8px; color: #4A4A46; animation-delay: 3.30s">그리고</p>
 <p class="hero-name" style="margin: 0; font-size: 28px; letter-spacing: 12px; padding-left: 12px; animation-delay: 3.50s">김정인</p>
 </div>
 <p class="hero-fade" style="margin: 36px 0 0; font-size: 15px; line-height: 2; letter-spacing: 1px; animation-delay: 4.20s">늦여름, 8월의 마지막 토요일<br>기쁜 마음을 담아 초대합니다</p>
-<div class="hero-fade" style="margin-top: 28px; animation-delay: 4.80s"><svg class="cue" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B98A84" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></div>
+<div class="hero-fade" style="margin-top: 28px; animation-delay: 4.80s"><svg class="cue" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A8A86" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></div>
 </section>
 
 <!-- INVITATION -->
-<section data-rv="s3" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #FCF2F1">
+<section data-rv="s3" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #F7F6F3">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">INVITATION</p>
+<div class="sec-ill" style="display: flex; justify-content: center; margin-bottom: 4px"><svg width="90" height="40" viewBox="0 0 90 40" aria-hidden="true" fill="none" stroke="#2A2A28" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M6 30 C26 26 54 24 84 12"/>
+<path d="M22 27 C20 20 24 15 30 14 C30 21 27 25 22 27 Z"/><path d="M22 27 C27 31 33 31 37 27 C32 24 27 24 22 27 Z"/>
+<path d="M42 23 C41 16 45 11 51 10 C51 17 48 21 42 23 Z"/><path d="M42 23 C47 27 53 27 57 23 C52 20 47 20 42 23 Z"/>
+<path d="M62 18 C62 12 66 8 71 8 C70 14 67 17 62 18 Z"/>
+<circle cx="84" cy="12" r="2.4"/>
+</svg></div>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">모시는 글</h2>
 </div>
 <p style="margin: 0; font-size: 15px; line-height: 2.1; text-align: center">오래 보아 알게 되었고<br>자주 보아 깊어졌습니다.<br><br>일곱 해를 곁에 두고 본 사람과<br>이제 평생을 함께 보려 합니다.<br><br>그 첫날에 귀한 걸음으로<br>함께해 주세요.</p>
-<div style="width: 200px; height: 1px; background: #EED6D3"></div>
+<div style="width: 200px; height: 1px; background: #E4E2DD"></div>
 <div style="display: flex; flex-direction: column; gap: 22px">
 <div style="display: flex; align-items: center; gap: 14px">
 <p style="margin: 0; font-size: 16px; line-height: 1.4; letter-spacing: 4px; text-align: center">방병성<br>강시현</p>
@@ -104,7 +116,7 @@ button{font-family:inherit;cursor:pointer}
 <p style="margin: 0; font-size: 18px; letter-spacing: 4px">김정인</p>
 </div>
 </div>
-<div style="width: 200px; height: 1px; background: #EED6D3"></div>
+<div style="width: 200px; height: 1px; background: #E4E2DD"></div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
 <p style="margin: 0; font-size: 12px; letter-spacing: 4px; color: #6B6B67">일 시</p>
 <p style="margin: 0; font-size: 15px">2027년 8월 28일 토요일 오후 3시</p>
@@ -116,87 +128,96 @@ button{font-family:inherit;cursor:pointer}
 <!-- COUPLE -->
 <section data-rv="s4" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">ABOUT US</p>
+<div class="sec-ill" style="display: flex; justify-content: center; margin-bottom: 4px"><svg width="78" height="56" viewBox="0 0 78 56" aria-hidden="true" fill="none" stroke="#2A2A28" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="30" cy="33" r="15"/><circle cx="30" cy="33" r="12.4" stroke-width=".8"/>
+<circle cx="48" cy="33" r="15"/><circle cx="48" cy="33" r="12.4" stroke-width=".8"/>
+<path d="M44 18 L48 12 L52 18 Z"/><path d="M45 15 L51 15"/>
+<path d="M60 8 L60 12 M58 10 L62 10" stroke-width="1"/>
+</svg></div>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">신랑 &amp; 신부</h2>
 </div>
 <div style="width: 100%; max-width: 300px; display: flex; gap: 20px; align-items: flex-start">
 <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div class="pic" style="width: 120px; height: 150px; background: #F5E4E2; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">[신랑 사진]</div>
+<div class="pic" style="width: 120px; height: 150px; background: #EEEDE9; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">[신랑 사진]</div>
 <p style="margin: 4px 0 0; font-size: 12px; letter-spacing: 4px; color: #6B6B67">신랑</p>
 <p style="margin: 0; font-size: 18px; letter-spacing: 4px">방재윤</p>
 </div>
 <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
-<div class="pic" style="width: 120px; height: 150px; background: #F5E4E2; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">[신부 사진]</div>
+<div class="pic" style="width: 120px; height: 150px; background: #EEEDE9; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">[신부 사진]</div>
 <p style="margin: 4px 0 0; font-size: 12px; letter-spacing: 4px; color: #6B6B67">신부</p>
 <p style="margin: 0; font-size: 18px; letter-spacing: 4px">김정인</p>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; font-size: 14px; line-height: 2; text-align: center; color: #4A4A46">
-<p style="margin: 0; display: inline-block"><span style="display: block; white-space: nowrap">사랑은 참고 기다리는 것이라,</span><span style="display: block; white-space: nowrap">언제나 묵묵히 곁을 지켜 왔습니다.</span><span style="display: block; margin-top: 8px; text-align: center; font-size: 13px; letter-spacing: 2px; color: #8A6F6B">- 신랑 방재윤 -</span></p>
-<p style="margin: 0; display: inline-block"><span style="display: block; white-space: nowrap">사랑은 친절한 것이라,</span><span style="display: block; white-space: nowrap">언제나 다정히 마음을 건넸습니다.</span><span style="display: block; margin-top: 8px; text-align: center; font-size: 13px; letter-spacing: 2px; color: #8A6F6B">- 신부 김정인 -</span></p>
+<p style="margin: 0; display: inline-block"><span style="display: block; white-space: nowrap">사랑은 참고 기다리는 것이라,</span><span style="display: block; white-space: nowrap">언제나 묵묵히 곁을 지켜 왔습니다.</span><span style="display: block; margin-top: 8px; text-align: center; font-size: 13px; letter-spacing: 2px; color: #6B6B67">- 신랑 방재윤 -</span></p>
+<p style="margin: 0; display: inline-block"><span style="display: block; white-space: nowrap">사랑은 친절한 것이라,</span><span style="display: block; white-space: nowrap">언제나 다정히 마음을 건넸습니다.</span><span style="display: block; margin-top: 8px; text-align: center; font-size: 13px; letter-spacing: 2px; color: #6B6B67">- 신부 김정인 -</span></p>
 </div>
 <p style="margin: 0; font-size: 14px; line-height: 2; text-align: center"><span style="display: block; white-space: nowrap">2021년 여름, 여의도에서 처음 만나</span><span style="display: block; white-space: nowrap">일곱 해를 지나 이제 부부가 됩니다.</span></p>
 </section>
 
 <!-- STORY -->
-<section data-rv="s11" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #FCF2F1">
+<section data-rv="s11" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #F7F6F3">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">OUR STORY</p>
+<div class="sec-ill" style="display: flex; justify-content: center; margin-bottom: 4px"><svg width="76" height="54" viewBox="0 0 76 54" aria-hidden="true" fill="none" stroke="#2A2A28" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M38 14 C30 9 18 9 9 12 L9 44 C18 41 30 41 38 46 Z"/><path d="M38 14 C46 9 58 9 67 12 L67 44 C58 41 46 41 38 46"/>
+<path d="M15 20 C21 18.5 27 18.5 32 20 M15 26 C21 24.5 27 24.5 32 26 M44 20 C49 18.5 55 18.5 61 20" stroke-width=".9"/>
+<path d="M54 26 C52 23 48 24 49 27 C49.6 29 54 31.5 54 31.5 C54 31.5 58.4 29 59 27 C60 24 56 23 54 26 Z" stroke-width="1"/>
+</svg></div>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">우리의 이야기</h2>
 </div>
 <div style="position: relative; width: 100%; max-width: 330px">
-<div aria-hidden="true" class="tl-line" style="position: absolute; left: 50%; top: 12px; bottom: 76px; width: 1px; margin-left: -0.5px; background: #E2C3BE"></div>
+<div aria-hidden="true" class="tl-line" style="position: absolute; left: 50%; top: 12px; bottom: 76px; width: 1px; margin-left: -0.5px; background: #D8D6D1"></div>
 <div class="tl-item tl-l" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); align-items: start; padding-bottom: 0; transition-delay: 0.30s">
 <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end; text-align: right">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #B98A84">2021</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #8A8A86">2021</span>
 <span style="font-size: 14px; line-height: 1.7; color: #4A4A46; white-space: nowrap">여름, 여의도에서<br>처음 만났고</span>
 </div>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #2A2A28; box-sizing: border-box"></span></span>
 <span></span>
 </div>
 <div class="tl-item tl-r" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); align-items: start; padding-bottom: 0; margin-top: -6px; transition-delay: 0.44s">
 <span></span>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #2A2A28; box-sizing: border-box"></span></span>
 <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #B98A84">2022</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #8A8A86">2022</span>
 <span style="font-size: 14px; line-height: 1.7; color: #4A4A46; white-space: nowrap">서로를 천천히<br>알아갔으며</span>
 </div>
 </div>
 <div class="tl-item tl-l" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); align-items: start; padding-bottom: 0; margin-top: -6px; transition-delay: 0.58s">
 <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end; text-align: right">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #B98A84">2023</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #8A8A86">2023</span>
 <span style="font-size: 14px; line-height: 1.7; color: #4A4A46; white-space: nowrap">같은 곳을<br>바라보기 시작했고</span>
 </div>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #2A2A28; box-sizing: border-box"></span></span>
 <span></span>
 </div>
 <div class="tl-item tl-r" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); align-items: start; padding-bottom: 0; margin-top: -6px; transition-delay: 0.72s">
 <span></span>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #2A2A28; box-sizing: border-box"></span></span>
 <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #B98A84">2024</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #8A8A86">2024</span>
 <span style="font-size: 14px; line-height: 1.7; color: #4A4A46; white-space: nowrap">서로의 내일이<br>소중해졌으며</span>
 </div>
 </div>
 <div class="tl-item tl-l" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); align-items: start; padding-bottom: 0; margin-top: -6px; transition-delay: 0.86s">
 <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end; text-align: right">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #B98A84">2025</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #8A8A86">2025</span>
 <span style="font-size: 14px; line-height: 1.7; color: #4A4A46; white-space: nowrap">두 가족에게<br>첫인사를 드렸고</span>
 </div>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #2A2A28; box-sizing: border-box"></span></span>
 <span></span>
 </div>
 <div class="tl-item tl-r" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); align-items: start; padding-bottom: 0; margin-top: -6px; transition-delay: 1.00s">
 <span></span>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #C98F88; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #2A2A28; box-sizing: border-box"></span></span>
 <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left">
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #B98A84">2026</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #8A8A86">2026</span>
 <span style="font-size: 14px; line-height: 1.7; color: #4A4A46; white-space: nowrap">겨울,<br>프로포즈를 받았으며</span>
 </div>
 </div>
 <div class="tl-item tl-end" style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding-top: 20px; transition-delay: 1.14s">
-<span style="width: 11px; height: 11px; border-radius: 6px; background: #C98F88"></span>
-<span style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; line-height: 1; color: #A9706A">2027</span>
+<span style="width: 11px; height: 11px; border-radius: 6px; background: #2A2A28"></span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; line-height: 1; color: #2A2A28">2027</span>
 <span style="font-size: 18px; font-weight: 700; letter-spacing: 2px; color: #2A2A28">이제는 결혼합니다</span>
 </div>
 </div>
@@ -205,7 +226,10 @@ button{font-family:inherit;cursor:pointer}
 <!-- CALENDAR -->
 <section data-rv="s5" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">SAVE THE DATE</p>
+<div class="sec-ill" style="display: flex; justify-content: center; margin-bottom: 4px"><svg width="62" height="56" viewBox="0 0 62 56" aria-hidden="true" fill="none" stroke="#2A2A28" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+<rect x="10" y="12" width="42" height="36" rx="3"/><path d="M10 22 L52 22"/><path d="M20 7 L20 16 M42 7 L42 16"/>
+<path d="M31 41 C26 37 23 34.5 23 31.5 C23 29.5 24.6 28 26.5 28 C28.2 28 29.4 29 31 30.6 C32.6 29 33.8 28 35.5 28 C37.4 28 39 29.5 39 31.5 C39 34.5 36 37 31 41 Z"/>
+</svg></div>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">예식 일시</h2>
 </div>
 <div class="cal" style="width: 100%; max-width: 300px; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); row-gap: 14px; font-family: 'Cormorant Garamond', serif; font-size: 16px; text-align: center">
@@ -213,19 +237,19 @@ button{font-family:inherit;cursor:pointer}
 </div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 16px">
 <div style="display: flex; gap: 10px; align-items: flex-start">
-<div class="cd" style="width: 64px; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 0 10px; background: #FFFFFF; border: 1px solid #EED6D3; border-radius: 8px">
+<div class="cd" style="width: 64px; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 0 10px; background: #FFFFFF; border: 1px solid #E4E2DD; border-radius: 8px">
 <span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1; color: #2A2A28"><span id="cd_d">0</span></span>
 <span style="font-size: 11px; letter-spacing: 2px; color: #6B6B67">일</span>
 </div>
-<div class="cd" style="width: 64px; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 0 10px; background: #FFFFFF; border: 1px solid #EED6D3; border-radius: 8px">
+<div class="cd" style="width: 64px; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 0 10px; background: #FFFFFF; border: 1px solid #E4E2DD; border-radius: 8px">
 <span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1; color: #2A2A28"><span id="cd_h">0</span></span>
 <span style="font-size: 11px; letter-spacing: 2px; color: #6B6B67">시</span>
 </div>
-<div class="cd" style="width: 64px; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 0 10px; background: #FFFFFF; border: 1px solid #EED6D3; border-radius: 8px">
+<div class="cd" style="width: 64px; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 0 10px; background: #FFFFFF; border: 1px solid #E4E2DD; border-radius: 8px">
 <span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1; color: #2A2A28"><span id="cd_m">0</span></span>
 <span style="font-size: 11px; letter-spacing: 2px; color: #6B6B67">분</span>
 </div>
-<div class="cd" style="width: 64px; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 0 10px; background: #FFFFFF; border: 1px solid #EED6D3; border-radius: 8px">
+<div class="cd" style="width: 64px; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 0 10px; background: #FFFFFF; border: 1px solid #E4E2DD; border-radius: 8px">
 <span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1; color: #2A2A28"><span id="cd_s">0</span></span>
 <span style="font-size: 11px; letter-spacing: 2px; color: #6B6B67">초</span>
 </div>
@@ -236,21 +260,25 @@ button{font-family:inherit;cursor:pointer}
 </section>
 
 <!-- PROGRAM -->
-<section data-rv="s6" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #FCF2F1">
+<section data-rv="s6" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #F7F6F3">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">PROGRAM</p>
+<div class="sec-ill" style="display: flex; justify-content: center; margin-bottom: 4px"><svg width="96" height="50" viewBox="0 0 96 50" aria-hidden="true" fill="none" stroke="#2A2A28" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="48" cy="25" r="20"/><circle cx="48" cy="25" r="14" stroke-width=".9"/>
+<path d="M16 8 L16 20 M12 8 L12 16 C12 19 14 20 16 20 C18 20 20 19 20 16 L20 8 M16 20 L16 44"/>
+<path d="M80 8 C86 12 86 22 80 26 L80 44"/>
+</svg></div>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">예식 안내</h2>
 </div>
 <p style="margin: 0; font-size: 15px; line-height: 2; text-align: center">예식 중 앉으신 자리로 코스 요리가 준비됩니다.<br>식사와 함께 저희의 첫걸음을<br>가까이서 지켜봐 주세요.</p>
-<div style="width: 100%; max-width: 330px; display: flex; flex-direction: column; border-bottom: 1px solid #F1DFDC">
-<div style="display: flex; gap: 20px; align-items: flex-start; padding: 18px 0; border-top: 1px solid #F1DFDC">
+<div style="width: 100%; max-width: 330px; display: flex; flex-direction: column; border-bottom: 1px solid #EAE8E4">
+<div style="display: flex; gap: 20px; align-items: flex-start; padding: 18px 0; border-top: 1px solid #EAE8E4">
 <p style="margin: 0; width: 44px; flex-shrink: 0; font-size: 13px; letter-spacing: 3px; color: #6B6B67">1부</p>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <p style="margin: 0; font-size: 15px">예식</p>
 <p style="margin: 0; font-size: 13px; line-height: 1.7; color: #4A4A46">오후 3시, 두 사람의 약속이 시작됩니다</p>
 </div>
 </div>
-<div style="display: flex; gap: 20px; align-items: flex-start; padding: 18px 0; border-top: 1px solid #F1DFDC">
+<div style="display: flex; gap: 20px; align-items: flex-start; padding: 18px 0; border-top: 1px solid #EAE8E4">
 <p style="margin: 0; width: 44px; flex-shrink: 0; font-size: 13px; letter-spacing: 3px; color: #6B6B67">2부</p>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <p style="margin: 0; font-size: 15px">축하연</p>
@@ -263,49 +291,57 @@ button{font-family:inherit;cursor:pointer}
 <!-- GALLERY -->
 <section data-rv="s7" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">GALLERY</p>
+<div class="sec-ill" style="display: flex; justify-content: center; margin-bottom: 4px"><svg width="74" height="54" viewBox="0 0 74 54" aria-hidden="true" fill="none" stroke="#2A2A28" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M8 18 Q8 14 12 14 L24 14 L28 8 L46 8 L50 14 L62 14 Q66 14 66 18 L66 44 Q66 48 62 48 L12 48 Q8 48 8 44 Z"/>
+<circle cx="37" cy="30" r="11"/><circle cx="37" cy="30" r="6.5" stroke-width=".9"/>
+<path d="M14 20 L20 20"/><circle cx="57" cy="21" r="1.4"/>
+<path d="M66 6 L66 10 M64 8 L68 8" stroke-width="1"/>
+</svg></div>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">우리의 순간</h2>
 </div>
 <div style="width: 100%; max-width: 350px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
-<button type="button" class="tile" data-i="0" aria-label="사진 1 크게 보기" style="transition-delay: 0.30s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 1</button>
-<button type="button" class="tile" data-i="1" aria-label="사진 2 크게 보기" style="transition-delay: 0.38s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 2</button>
-<button type="button" class="tile" data-i="2" aria-label="사진 3 크게 보기" style="transition-delay: 0.46s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 3</button>
-<button type="button" class="tile" data-i="3" aria-label="사진 4 크게 보기" style="transition-delay: 0.54s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 4</button>
-<button type="button" class="tile" data-i="4" aria-label="사진 5 크게 보기" style="transition-delay: 0.62s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 5</button>
-<button type="button" class="tile" data-i="5" aria-label="사진 6 크게 보기" style="transition-delay: 0.70s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 6</button>
-<button type="button" class="tile" data-i="6" aria-label="사진 7 크게 보기" style="transition-delay: 0.78s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 7</button>
-<button type="button" class="tile" data-i="7" aria-label="사진 8 크게 보기" style="transition-delay: 0.86s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 8</button>
-<button type="button" class="tile" data-i="8" aria-label="사진 9 크게 보기" style="transition-delay: 0.94s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 9</button>
-<button type="button" class="tile more" hidden data-i="9" aria-label="사진 10 크게 보기" style="transition-delay: 0.30s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 10</button>
-<button type="button" class="tile more" hidden data-i="10" aria-label="사진 11 크게 보기" style="transition-delay: 0.38s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 11</button>
-<button type="button" class="tile more" hidden data-i="11" aria-label="사진 12 크게 보기" style="transition-delay: 0.46s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 12</button>
-<button type="button" class="tile more" hidden data-i="12" aria-label="사진 13 크게 보기" style="transition-delay: 0.54s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 13</button>
-<button type="button" class="tile more" hidden data-i="13" aria-label="사진 14 크게 보기" style="transition-delay: 0.62s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 14</button>
-<button type="button" class="tile more" hidden data-i="14" aria-label="사진 15 크게 보기" style="transition-delay: 0.70s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 15</button>
-<button type="button" class="tile more" hidden data-i="15" aria-label="사진 16 크게 보기" style="transition-delay: 0.78s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 16</button>
-<button type="button" class="tile more" hidden data-i="16" aria-label="사진 17 크게 보기" style="transition-delay: 0.86s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 17</button>
-<button type="button" class="tile more" hidden data-i="17" aria-label="사진 18 크게 보기" style="transition-delay: 0.94s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 18</button>
-<button type="button" class="tile more" hidden data-i="18" aria-label="사진 19 크게 보기" style="transition-delay: 0.30s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 19</button>
-<button type="button" class="tile more" hidden data-i="19" aria-label="사진 20 크게 보기" style="transition-delay: 0.38s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 20</button>
-<button type="button" class="tile more" hidden data-i="20" aria-label="사진 21 크게 보기" style="transition-delay: 0.46s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 21</button>
-<button type="button" class="tile more" hidden data-i="21" aria-label="사진 22 크게 보기" style="transition-delay: 0.54s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 22</button>
-<button type="button" class="tile more" hidden data-i="22" aria-label="사진 23 크게 보기" style="transition-delay: 0.62s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 23</button>
-<button type="button" class="tile more" hidden data-i="23" aria-label="사진 24 크게 보기" style="transition-delay: 0.70s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 24</button>
-<button type="button" class="tile more" hidden data-i="24" aria-label="사진 25 크게 보기" style="transition-delay: 0.78s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 25</button>
-<button type="button" class="tile more" hidden data-i="25" aria-label="사진 26 크게 보기" style="transition-delay: 0.86s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 26</button>
-<button type="button" class="tile more" hidden data-i="26" aria-label="사진 27 크게 보기" style="transition-delay: 0.94s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 27</button>
-<button type="button" class="tile more" hidden data-i="27" aria-label="사진 28 크게 보기" style="transition-delay: 0.30s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 28</button>
-<button type="button" class="tile more" hidden data-i="28" aria-label="사진 29 크게 보기" style="transition-delay: 0.38s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 29</button>
-<button type="button" class="tile more" hidden data-i="29" aria-label="사진 30 크게 보기" style="transition-delay: 0.46s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #F5E4E2; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 30</button>
+<button type="button" class="tile" data-i="0" aria-label="사진 1 크게 보기" style="transition-delay: 0.30s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 1</button>
+<button type="button" class="tile" data-i="1" aria-label="사진 2 크게 보기" style="transition-delay: 0.38s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 2</button>
+<button type="button" class="tile" data-i="2" aria-label="사진 3 크게 보기" style="transition-delay: 0.46s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 3</button>
+<button type="button" class="tile" data-i="3" aria-label="사진 4 크게 보기" style="transition-delay: 0.54s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 4</button>
+<button type="button" class="tile" data-i="4" aria-label="사진 5 크게 보기" style="transition-delay: 0.62s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 5</button>
+<button type="button" class="tile" data-i="5" aria-label="사진 6 크게 보기" style="transition-delay: 0.70s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 6</button>
+<button type="button" class="tile" data-i="6" aria-label="사진 7 크게 보기" style="transition-delay: 0.78s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 7</button>
+<button type="button" class="tile" data-i="7" aria-label="사진 8 크게 보기" style="transition-delay: 0.86s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 8</button>
+<button type="button" class="tile" data-i="8" aria-label="사진 9 크게 보기" style="transition-delay: 0.94s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 9</button>
+<button type="button" class="tile more" hidden data-i="9" aria-label="사진 10 크게 보기" style="transition-delay: 0.30s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 10</button>
+<button type="button" class="tile more" hidden data-i="10" aria-label="사진 11 크게 보기" style="transition-delay: 0.38s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 11</button>
+<button type="button" class="tile more" hidden data-i="11" aria-label="사진 12 크게 보기" style="transition-delay: 0.46s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 12</button>
+<button type="button" class="tile more" hidden data-i="12" aria-label="사진 13 크게 보기" style="transition-delay: 0.54s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 13</button>
+<button type="button" class="tile more" hidden data-i="13" aria-label="사진 14 크게 보기" style="transition-delay: 0.62s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 14</button>
+<button type="button" class="tile more" hidden data-i="14" aria-label="사진 15 크게 보기" style="transition-delay: 0.70s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 15</button>
+<button type="button" class="tile more" hidden data-i="15" aria-label="사진 16 크게 보기" style="transition-delay: 0.78s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 16</button>
+<button type="button" class="tile more" hidden data-i="16" aria-label="사진 17 크게 보기" style="transition-delay: 0.86s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 17</button>
+<button type="button" class="tile more" hidden data-i="17" aria-label="사진 18 크게 보기" style="transition-delay: 0.94s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 18</button>
+<button type="button" class="tile more" hidden data-i="18" aria-label="사진 19 크게 보기" style="transition-delay: 0.30s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 19</button>
+<button type="button" class="tile more" hidden data-i="19" aria-label="사진 20 크게 보기" style="transition-delay: 0.38s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 20</button>
+<button type="button" class="tile more" hidden data-i="20" aria-label="사진 21 크게 보기" style="transition-delay: 0.46s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 21</button>
+<button type="button" class="tile more" hidden data-i="21" aria-label="사진 22 크게 보기" style="transition-delay: 0.54s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 22</button>
+<button type="button" class="tile more" hidden data-i="22" aria-label="사진 23 크게 보기" style="transition-delay: 0.62s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 23</button>
+<button type="button" class="tile more" hidden data-i="23" aria-label="사진 24 크게 보기" style="transition-delay: 0.70s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 24</button>
+<button type="button" class="tile more" hidden data-i="24" aria-label="사진 25 크게 보기" style="transition-delay: 0.78s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 25</button>
+<button type="button" class="tile more" hidden data-i="25" aria-label="사진 26 크게 보기" style="transition-delay: 0.86s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 26</button>
+<button type="button" class="tile more" hidden data-i="26" aria-label="사진 27 크게 보기" style="transition-delay: 0.94s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 27</button>
+<button type="button" class="tile more" hidden data-i="27" aria-label="사진 28 크게 보기" style="transition-delay: 0.30s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 28</button>
+<button type="button" class="tile more" hidden data-i="28" aria-label="사진 29 크게 보기" style="transition-delay: 0.38s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 29</button>
+<button type="button" class="tile more" hidden data-i="29" aria-label="사진 30 크게 보기" style="transition-delay: 0.46s; aspect-ratio: 3 / 4; padding: 0; border: 0; background: #EEEDE9; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6B6B67">사진 30</button>
 
 </div>
-<button type="button" id="galBtn" style="min-height: 44px; padding: 0 28px; border: 1px solid #D9AFAA; border-radius: 22px; background: #FFFFFF; font-size: 14px; color: #2A2A28">사진 더보기</button>
+<button type="button" id="galBtn" style="min-height: 44px; padding: 0 28px; border: 1px solid #CFCDC8; border-radius: 22px; background: #FFFFFF; font-size: 14px; color: #2A2A28">사진 더보기</button>
 </section>
 
 <!-- LOCATION -->
-<section data-rv="s8" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #FCF2F1">
+<section data-rv="s8" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; background: #F7F6F3">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">LOCATION</p>
+<div class="sec-ill" style="display: flex; justify-content: center; margin-bottom: 4px"><svg width="60" height="56" viewBox="0 0 60 56" aria-hidden="true" fill="none" stroke="#2A2A28" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M30 46 C30 46 16 32 16 22 C16 13 22 7 30 7 C38 7 44 13 44 22 C44 32 30 46 30 46 Z"/><circle cx="30" cy="22" r="5.5"/>
+<path d="M12 50 C20 47 40 47 48 50" stroke-width=".9"/>
+</svg></div>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">오시는 길</h2>
 </div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
@@ -313,9 +349,9 @@ button{font-family:inherit;cursor:pointer}
 <p style="margin: 0; font-size: 14px; color: #6B6B67">서울 강남구 학동로 519 (청담동 73-4)</p>
 <p style="margin: 0; font-size: 14px; color: #6B6B67">Tel. 02-542-7513</p>
 </div>
-<svg class="pic" width="342" height="250" viewBox="0 0 342 250" preserveAspectRatio="xMidYMid meet" role="img" aria-label="약도: 빌라드지디 청담은 학동로 위 7호선 청담역 12번 출구 바로 앞에 있습니다. 서쪽에 청담근린공원, 동쪽에 영동대로와 청담역·경기고교 버스정류장, 남쪽에 경기고등학교가 있습니다." style="width: 100%; max-width: 342px; height: auto; border: 1px solid #F1DFDC; font-family: 'Nanum Myeongjo', serif">
+<svg class="pic" width="342" height="250" viewBox="0 0 342 250" preserveAspectRatio="xMidYMid meet" role="img" aria-label="약도: 빌라드지디 청담은 학동로 위 7호선 청담역 12번 출구 바로 앞에 있습니다. 서쪽에 청담근린공원, 동쪽에 영동대로와 청담역·경기고교 버스정류장, 남쪽에 경기고등학교가 있습니다." style="width: 100%; max-width: 342px; height: auto; border: 1px solid #EAE8E4; font-family: 'Nanum Myeongjo', serif">
 <rect x="0" y="0" width="342" height="250" fill="#FFFFFF"></rect>
-<g stroke="#F3E3E1" stroke-linecap="butt">
+<g stroke="#ECEAE6" stroke-linecap="butt">
 <line x1="40" y1="0" x2="40" y2="250" stroke-width="14"></line>
 <line x1="168" y1="40" x2="168" y2="250" stroke-width="12"></line>
 <line x1="33" y1="40" x2="342" y2="40" stroke-width="12"></line>
@@ -349,24 +385,24 @@ button{font-family:inherit;cursor:pointer}
 <g transform="translate(326 14)"><line x1="0" y1="14" x2="0" y2="2" stroke="#2A2A28" stroke-width="1"></line><path d="M0 0 L3 5 H-3 Z" fill="#2A2A28"></path><text x="0" y="24" font-size="7" fill="#2A2A28" text-anchor="middle">N</text></g>
 </svg>
 <div style="width: 100%; max-width: 342px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
-<a href="https://map.naver.com/p/search/빌라드지디청담" style="display: flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid #EED6D3; border-radius: 6px; font-size: 14px; text-decoration: none; background: #FFFFFF">네이버 지도</a>
-<a href="https://map.kakao.com/?q=빌라드지디청담" style="display: flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid #EED6D3; border-radius: 6px; font-size: 14px; text-decoration: none; background: #FFFFFF">카카오맵</a>
+<a href="https://map.naver.com/p/search/빌라드지디청담" style="display: flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid #E4E2DD; border-radius: 6px; font-size: 14px; text-decoration: none; background: #FFFFFF">네이버 지도</a>
+<a href="https://map.kakao.com/?q=빌라드지디청담" style="display: flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid #E4E2DD; border-radius: 6px; font-size: 14px; text-decoration: none; background: #FFFFFF">카카오맵</a>
 </div>
 <div style="width: 100%; max-width: 342px; display: flex; flex-direction: column; gap: 18px; font-size: 14px; line-height: 1.7">
-<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 1px solid #F1DFDC">
+<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 1px solid #EAE8E4">
 <p style="margin: 0; font-weight: 700; color: #2A2A28">지하철</p>
 <p style="margin: 0">7호선 청담역 12번 출구에서<br>약 42m, 도보 1분</p>
 <p style="margin: 4px 0 0; font-size: 13px; color: #2A2A28">KTX 이용 시</p>
 <p style="margin: 0; font-size: 13px; color: #6B6B67">서울역 → 4호선 총신대입구(이수)역<br>→ 7호선 환승 → 청담역</p>
 <p style="margin: 0; font-size: 13px; color: #6B6B67">수서역 → 3호선 고속터미널역<br>→ 7호선 환승 → 청담역</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 1px solid #F1DFDC">
+<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 1px solid #EAE8E4">
 <p style="margin: 0; font-weight: 700; color: #2A2A28">버스</p>
 <p style="margin: 0">청담역, 경기고교 정류장 하차, 도보 1분<br>(진흥아파트 방면)</p>
 <p style="margin: 0; font-size: 13px; color: #6B6B67">간선(파랑) 301, 343, 401</p>
 <p style="margin: 0; font-size: 13px; color: #6B6B67">지선(초록) 2415, 3414, 3426</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 1px solid #F1DFDC">
+<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 1px solid #EAE8E4">
 <p style="margin: 0; font-weight: 700; color: #2A2A28">자가용</p>
 <p style="margin: 0">내비게이션에 빌라드지디 청담 또는<br>서울 강남구 학동로 519 입력</p>
 <p style="margin: 0; font-size: 13px; color: #6B6B67">전용 주차장과 발렛 주차 서비스를 운영하며<br>하객분들께는 3시간 무료 주차가 제공됩니다.</p>
@@ -381,66 +417,69 @@ button{font-family:inherit;cursor:pointer}
 <!-- ACCOUNTS -->
 <section data-rv="s9" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; letter-spacing: 5px; padding-left: 5px; color: #B27770">WITH GRATITUDE</p>
+<div class="sec-ill" style="display: flex; justify-content: center; margin-bottom: 4px"><svg width="76" height="54" viewBox="0 0 76 54" aria-hidden="true" fill="none" stroke="#2A2A28" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+<rect x="8" y="12" width="60" height="36" rx="2"/><path d="M8 13 L38 34 L68 13"/><path d="M8 47 L30 29 M68 47 L46 29" stroke-width=".9"/>
+<path d="M38 10 C35 5 29 6 30 11 C31 14 38 18 38 18 C38 18 45 14 46 11 C47 6 41 5 38 10 Z"/>
+</svg></div>
 <h2 class="sec-ko" style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">마음 전하실 곳</h2>
 </div>
 <p style="margin: 0; font-size: 14px; line-height: 1.8; text-align: center; color: #6B6B67">보내주시는 마음, 감사히 간직하겠습니다.</p>
 <div style="width: 100%; max-width: 342px; display: flex; flex-direction: column; gap: 12px">
-<div style="width: 100%; max-width: 342px; background: #FFFFFF; border: 1px solid #EED6D3; border-radius: 8px; overflow: hidden">
+<div style="width: 100%; max-width: 342px; background: #FFFFFF; border: 1px solid #E4E2DD; border-radius: 8px; overflow: hidden">
 <button type="button" class="accBtn" aria-expanded="false" style="width: 100%; min-height: 52px; padding: 0 18px; border: 0; background: #FFFFFF; display: flex; align-items: center; justify-content: space-between; font-size: 15px; color: #2A2A28">
 <span>신랑측</span>
 <span style="font-size: 13px; color: #6B6B67"><span class="arrow">펼치기</span></span>
 </button>
-<div class="accs" hidden style="display: flex; flex-direction: column; border-top: 1px solid #F1DFDC">
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #F4E3E1">
+<div class="accs" hidden style="display: flex; flex-direction: column; border-top: 1px solid #EAE8E4">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #EFEDE9">
 <div style="display: flex; flex-direction: column; gap: 2px; font-size: 13px; line-height: 1.5">
 <span style="color: #6B6B67">신랑 방재윤</span>
 <span>[은행] [계좌번호]</span>
 </div>
-<button type="button" class="copy" data-copy="[은행] [계좌번호] 방재윤" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #EED6D3; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
+<button type="button" class="copy" data-copy="[은행] [계좌번호] 방재윤" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #E4E2DD; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
 </div>
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #F4E3E1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #EFEDE9">
 <div style="display: flex; flex-direction: column; gap: 2px; font-size: 13px; line-height: 1.5">
 <span style="color: #6B6B67">신랑 아버지 방병성</span>
 <span>[은행] [계좌번호]</span>
 </div>
-<button type="button" class="copy" data-copy="[은행] [계좌번호] 방병성" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #EED6D3; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
+<button type="button" class="copy" data-copy="[은행] [계좌번호] 방병성" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #E4E2DD; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
 </div>
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #F4E3E1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #EFEDE9">
 <div style="display: flex; flex-direction: column; gap: 2px; font-size: 13px; line-height: 1.5">
 <span style="color: #6B6B67">신랑 어머니 강시현</span>
 <span>[은행] [계좌번호]</span>
 </div>
-<button type="button" class="copy" data-copy="[은행] [계좌번호] 강시현" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #EED6D3; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
+<button type="button" class="copy" data-copy="[은행] [계좌번호] 강시현" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #E4E2DD; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
 </div>
 </div>
 </div>
-<div style="width: 100%; max-width: 342px; background: #FFFFFF; border: 1px solid #EED6D3; border-radius: 8px; overflow: hidden">
+<div style="width: 100%; max-width: 342px; background: #FFFFFF; border: 1px solid #E4E2DD; border-radius: 8px; overflow: hidden">
 <button type="button" class="accBtn" aria-expanded="false" style="width: 100%; min-height: 52px; padding: 0 18px; border: 0; background: #FFFFFF; display: flex; align-items: center; justify-content: space-between; font-size: 15px; color: #2A2A28">
 <span>신부측</span>
 <span style="font-size: 13px; color: #6B6B67"><span class="arrow">펼치기</span></span>
 </button>
-<div class="accs" hidden style="display: flex; flex-direction: column; border-top: 1px solid #F1DFDC">
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #F4E3E1">
+<div class="accs" hidden style="display: flex; flex-direction: column; border-top: 1px solid #EAE8E4">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #EFEDE9">
 <div style="display: flex; flex-direction: column; gap: 2px; font-size: 13px; line-height: 1.5">
 <span style="color: #6B6B67">신부 김정인</span>
 <span>[은행] [계좌번호]</span>
 </div>
-<button type="button" class="copy" data-copy="[은행] [계좌번호] 김정인" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #EED6D3; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
+<button type="button" class="copy" data-copy="[은행] [계좌번호] 김정인" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #E4E2DD; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
 </div>
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #F4E3E1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #EFEDE9">
 <div style="display: flex; flex-direction: column; gap: 2px; font-size: 13px; line-height: 1.5">
 <span style="color: #6B6B67">신부 아버지 김용호</span>
 <span>[은행] [계좌번호]</span>
 </div>
-<button type="button" class="copy" data-copy="[은행] [계좌번호] 김용호" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #EED6D3; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
+<button type="button" class="copy" data-copy="[은행] [계좌번호] 김용호" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #E4E2DD; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
 </div>
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #F4E3E1">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #EFEDE9">
 <div style="display: flex; flex-direction: column; gap: 2px; font-size: 13px; line-height: 1.5">
 <span style="color: #6B6B67">신부 어머니 이정미</span>
 <span>[은행] [계좌번호]</span>
 </div>
-<button type="button" class="copy" data-copy="[은행] [계좌번호] 이정미" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #EED6D3; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
+<button type="button" class="copy" data-copy="[은행] [계좌번호] 이정미" style="flex-shrink: 0; min-width: 64px; min-height: 44px; border: 1px solid #E4E2DD; border-radius: 6px; background: #FFFFFF; font-size: 13px; color: #2A2A28">복사</button>
 </div>
 </div>
 </div>
@@ -448,8 +487,8 @@ button{font-family:inherit;cursor:pointer}
 </section>
 
 <!-- CLOSING -->
-<section data-rv="s10" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; text-align: center; background: #FCF2F1">
-<div style="width: 1px; height: 40px; background: #D9AFAA"></div>
+<section data-rv="s10" class="reveal" style="display: flex; flex-direction: column; align-items: center; padding: 80px 24px; gap: 32px; text-align: center; background: #F7F6F3">
+<div style="width: 1px; height: 40px; background: #CFCDC8"></div>
 <p style="margin: 0; font-size: 16px; line-height: 1.8">서로의 가장 좋은 사람이 되어 살겠습니다.</p>
 <p style="margin: -16px 0 0; font-size: 14px; line-height: 1.9; color: #6B6B67">함께해 주시는 모든 분들께<br>깊이 감사드립니다.</p>
 <p style="margin: 0; font-size: 15px; letter-spacing: 6px; padding-left: 6px; color: #2A2A28">재윤 · 정인 <span style="font-size: 13px; color: #6B6B67">올림</span></p>
