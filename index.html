@@ -72,6 +72,19 @@ html.skip .ch,html.skip .hero-name,html.skip .hero-fade,html.skip .hero-photo,ht
 .olive [style*="border-top"]{border-color:rgba(244,242,232,.35)!important}
 .olive a,.olive button{background:transparent!important;color:#F4F2E8!important;border-color:rgba(244,242,232,.55)!important}
 .olive .deco{display:none}
+.rsvp{width:100%;max-width:342px;display:flex;flex-direction:column;gap:22px}
+.rf{display:flex;flex-direction:column;gap:9px}.rf.hide{display:none}
+.rl{font-size:13px;color:#6B6B67;letter-spacing:1px}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}
+.seg button,.rsvp input,.rsvp select,.rsvp textarea{font-family:inherit;font-size:15px;color:#2A2A28;background:#FFFFFF;border:1px solid #DAD8D1;border-radius:3px}
+.seg button{min-height:46px}.seg button.on{background:#939A78;border-color:#939A78;color:#FFFFFF}
+.rsvp input,.rsvp select{min-height:46px;padding:0 14px;box-sizing:border-box;width:100%}
+.rsvp textarea{padding:12px 14px;box-sizing:border-box;width:100%;resize:none;line-height:1.7}
+.rsvp input:focus,.rsvp select:focus,.rsvp textarea:focus,.seg button:focus-visible{outline:2px solid #939A78;outline-offset:1px}
+.rerr{margin:-6px 0 0;font-size:13px;color:#A0523D;min-height:0}
+.rbtn{min-height:50px;border:0;border-radius:3px;background:#939A78;color:#FFFFFF;font-family:inherit;font-size:15px;letter-spacing:2px}
+.rbtn:disabled{opacity:.6}
+.rdone{margin:0;font-size:15px;line-height:1.9;text-align:center;color:#2A2A28}
 main{background:#FFFFFF!important;padding:0}
 section.card{position:relative;margin:0}
 .sec-en{font-size:11px;letter-spacing:4px;padding-left:4px;color:#939A78;margin:0 0 2px}
@@ -496,6 +509,27 @@ section.card{position:relative;margin:0}
 </div>
 </section>
 
+<!-- RSVP -->
+<section data-rv="s12" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #EFF1E4">
+<div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+<p class="sec-en">R.S.V.P.</p>
+<h2 class="sec-ko" style="margin: 0; font-size: 21px; font-weight: 500; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">참석 여부 전달</h2>
+<div class="sec-fil" style="display: flex; justify-content: center; margin-top: 10px"><span style="display: block; width: 28px; height: 1px; background: #939A78"></span></div>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.9; text-align: center; color: #6B6B67">예식 중 코스 요리가 준비되어<br>참석 여부를 미리 알려 주시면<br>정성껏 자리를 마련하겠습니다.</p>
+<form id="rsvp" class="rsvp" novalidate>
+<div class="rf"><span class="rl">구분</span><div class="seg" data-k="side"><button type="button" data-v="신랑측">신랑측</button><button type="button" data-v="신부측">신부측</button></div></div>
+<div class="rf"><span class="rl">참석 여부</span><div class="seg" data-k="attend"><button type="button" data-v="참석">참석할게요</button><button type="button" data-v="불참">참석이 어려워요</button></div></div>
+<div class="rf"><label class="rl" for="rName">성함</label><input id="rName" name="name" type="text" autocomplete="name" placeholder="성함을 입력해 주세요"></div>
+<div class="rf rx"><label class="rl" for="rCount">인원 (본인 포함)</label><select id="rCount" name="count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+<div class="rf rx"><span class="rl">식사</span><div class="seg" data-k="meal"><button type="button" data-v="예정">예정</button><button type="button" data-v="안 함">안 함</button><button type="button" data-v="미정">미정</button></div></div>
+<div class="rf"><label class="rl" for="rMsg">전하실 말씀 (선택)</label><textarea id="rMsg" name="msg" rows="3" placeholder="축하의 한마디를 남겨 주세요"></textarea></div>
+<p id="rErr" class="rerr" role="alert"></p>
+<button type="submit" id="rBtn" class="rbtn">전달하기</button>
+</form>
+<p id="rDone" class="rdone" hidden>소중한 마음 전해 주셔서 감사합니다.<br>기쁜 날 뵙겠습니다.</p>
+</section>
+
 <!-- CLOSING -->
 <section data-rv="s10" class="card reveal olive" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; text-align: center; background: #EFF1E4">
 <div class="deco" aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none"><svg aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; opacity: .5; mix-blend-mode: multiply"><filter id="pp29"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="29"/><feColorMatrix type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .07 0"/></filter><rect width="100%" height="100%" filter="url(#pp29)"/></svg></div>
@@ -552,6 +586,33 @@ section.card{position:relative;margin:0}
   [].forEach.call(document.querySelectorAll('.accBtn'),function(btn){
     btn.addEventListener('click',function(){var box=btn.parentNode.querySelector('.accs');var o=box.hidden;box.hidden=!o;btn.setAttribute('aria-expanded',o?'true':'false');btn.querySelector('.arrow').textContent=o?'접기':'펼치기';});
   });
+
+  (function(){
+    var EP='https://script.google.com/macros/s/AKfycbwBHhO3TIFK0ROwQUB49BtlPZjWrpYzKMf4D5DjQ5f0Ie2IbrzanmstPNdtcCnGnjBe/exec';
+    var f=document.getElementById('rsvp'); if(!f) return;
+    var st={side:'',attend:'',meal:''};
+    [].forEach.call(f.querySelectorAll('.seg'),function(g){
+      g.addEventListener('click',function(ev){var b=ev.target.closest('button'); if(!b) return;
+        [].forEach.call(g.children,function(x){x.classList.toggle('on',x===b); x.setAttribute('aria-pressed',x===b?'true':'false');});
+        st[g.getAttribute('data-k')]=b.getAttribute('data-v');
+        if(g.getAttribute('data-k')==='attend'){[].forEach.call(f.querySelectorAll('.rx'),function(r){r.classList.toggle('hide',st.attend==='불참');});}
+      });
+    });
+    try{ if(localStorage.getItem('rsvp-sent')){ f.hidden=true; document.getElementById('rDone').hidden=false; } }catch(e){}
+    f.addEventListener('submit',function(ev){ev.preventDefault();
+      var err=document.getElementById('rErr'), name=f.name.value.trim();
+      if(!st.side){err.textContent='신랑측·신부측을 선택해 주세요.';return;}
+      if(!st.attend){err.textContent='참석 여부를 선택해 주세요.';return;}
+      if(!name){err.textContent='성함을 입력해 주세요.';f.name.focus();return;}
+      err.textContent='';
+      var no=st.attend==='불참';
+      var data=new URLSearchParams({name:name,side:st.side,attend:st.attend,count:no?'0':f.count.value,meal:no?'':(st.meal||'미정'),msg:f.msg.value.trim()});
+      var btn=document.getElementById('rBtn'); btn.disabled=true; btn.textContent='전달 중…';
+      fetch(EP,{method:'POST',mode:'no-cors',body:data}).then(function(){
+        f.hidden=true; document.getElementById('rDone').hidden=false; try{localStorage.setItem('rsvp-sent','1')}catch(e){}
+      }).catch(function(){btn.disabled=false; btn.textContent='전달하기'; err.textContent='전송에 실패했어요. 잠시 후 다시 시도해 주세요.';});
+    });
+  })();
   [].forEach.call(document.querySelectorAll('.copy'),function(c){
     c.addEventListener('click',function(){var txt=c.getAttribute('data-copy');
       function done(){c.textContent='복사됨';setTimeout(function(){c.textContent='복사';},1500);}
