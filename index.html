@@ -34,19 +34,19 @@ button{font-family:inherit;cursor:pointer}
 .reveal .tile{opacity:0;transform:translateY(24px) scale(.92);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.reveal.in .tile{opacity:1;transform:none}
 .ch{display:inline-block;-webkit-backface-visibility:hidden;animation:ch .8s cubic-bezier(.2,.7,.2,1) both}
 @keyframes ch{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.hero-photo{overflow:hidden;animation:wipe 1.2s cubic-bezier(.65,0,.25,1) 6.35s both}
+.hero-photo{overflow:hidden;animation:wipe 1.2s cubic-bezier(.65,0,.25,1) 4.65s both}
 @keyframes wipe{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
-.hero-img{animation:zoomout 2.6s cubic-bezier(.2,.7,.2,1) 6.35s both}
+.hero-img{animation:zoomout 2.6s cubic-bezier(.2,.7,.2,1) 4.65s both}
 @keyframes zoomout{from{transform:scale(1.16)}}
-.hero-line{transform-origin:top;animation:draw .7s cubic-bezier(.4,0,.2,1) 6.6s both}
+.hero-line{transform-origin:top;animation:draw .7s cubic-bezier(.4,0,.2,1) 4.9s both}
 @keyframes draw{from{transform:scaleY(0)}}
 .hero-name{animation:spread 1.1s cubic-bezier(.2,.7,.2,1) both}
 @keyframes spread{from{opacity:0;letter-spacing:28px;filter:blur(5px)}}
 .hero-fade{animation:fade .9s ease both}
 .reveal .tl-item{opacity:0;transition:opacity .6s ease,transform .7s cubic-bezier(.2,.8,.2,1)}.reveal .tl-l{transform:translateX(-24px)}.reveal .tl-r{transform:translateX(24px)}.reveal .tl-end{transform:translateY(16px) scale(.96)}.reveal.in .tl-item{opacity:1;transform:none}
 .reveal .tl-line{transform:scaleY(0);transform-origin:top;transition:transform 1s cubic-bezier(.4,0,.2,1) .1s}.reveal.in .tl-line{transform:none}
-.splash{position:fixed;left:0;top:0;right:0;bottom:0;z-index:40;background:#939A78;display:flex;align-items:center;justify-content:center;overflow:hidden;pointer-events:none;opacity:0;visibility:hidden;animation:spOut 7s ease both}
-@keyframes spOut{0%,90%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+.splash{position:fixed;left:0;top:0;right:0;bottom:0;z-index:40;background:#939A78;display:flex;align-items:center;justify-content:center;overflow:hidden;pointer-events:none;opacity:0;visibility:hidden;animation:spOut 5.2s ease both}
+@keyframes spOut{0%,88%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
 .sp-txt{display:flex;flex-direction:column;align-items:center;gap:14px;font-family:"Cormorant Garamond",serif;font-weight:500;color:#FFFFFF;font-size:40px;line-height:1.2;transform:translateY(-7vh)}
 .sp-ln{display:block;letter-spacing:12px;padding-left:12px;position:relative}
 .sp-c{opacity:0;animation:spC .01s linear both;position:relative}
@@ -57,7 +57,7 @@ button{font-family:inherit;cursor:pointer}
 @keyframes blink{0%{opacity:1}50%{opacity:0}}
 .sp-w{fill:#FFFFFF}
 .sp-top,.sp-bot{position:absolute;left:0;right:0;text-align:center;color:#FBFAF4;font-size:13px;letter-spacing:7px;padding-left:7px;opacity:0;animation:fade 1s ease .2s both}
-.sp-top{top:17%}.sp-bot{bottom:24%;font-size:16px;letter-spacing:6px;animation-delay:4.2s}
+.sp-top{top:17%}.sp-bot{bottom:24%;font-size:16px;letter-spacing:6px;animation-delay:3.3s}
 .sp-rule{position:absolute;left:50%;width:1px;height:40px;background:rgba(251,250,244,.6);margin-left:-.5px}
 .sp-g{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:8;stroke-dasharray:1;animation:spDraw .8s ease-in-out both,spFill .6s ease both}
 .sp-f{fill:none;stroke:#FFFFFF;stroke-width:26;stroke-linecap:round;stroke-dasharray:1;animation:spDraw 1s ease-in-out both}
@@ -100,14 +100,15 @@ details.story .tl-item,details.story .tl-line{opacity:1!important;transform:none
 .sec-fil span{width:18px!important;opacity:.7}
 .seg button,.rsvp input,.rsvp select,.rsvp textarea{border-color:#E2E0D8!important;font-size:14px!important}
 .rbtn{letter-spacing:4px!important;font-size:14px!important}
+.eb{font-family:"Cormorant Garamond",serif!important;font-weight:500;font-size:12px!important}
 main{background:#FFFFFF!important;padding:0}
 section.card{position:relative;margin:0}
-.sec-en{font-size:10px;letter-spacing:6px;padding-left:6px;color:#939A78;margin:0 0 2px}
+.sec-en{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:12px;letter-spacing:6px;padding-left:6px;color:#939A78;margin:0 0 2px}
 
 @keyframes cue{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}
 .cue{animation:cue 1.8s ease-in-out infinite}
 @media (prefers-reduced-motion: reduce){main *{animation:none!important}.reveal *,.reveal>*,.reveal .tl-item{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}}
-.bgm{position:fixed;top:14px;right:14px;z-index:10;width:44px;height:44px;border-radius:22px;border:1px solid #E4E2DD;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;color:#2A2A28}
+.bgm{position:fixed;top:14px;right:14px;z-index:10;width:44px;height:44px;border-radius:2px;border:1px solid #E8E6DF;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;color:#2A2A28}
 </style>
 <style>[hidden]{display:none!important}html{-webkit-text-size-adjust:100%}body{background:#FFFFFF}</style>
 </head>
@@ -129,11 +130,10 @@ section.card{position:relative;margin:0}
 </div>
 </div>
 
-<div class="splash" aria-hidden="true"><p class="sp-top" style="margin:0">THE WEDDING OF</p><p class="sp-bot" style="margin:0">2027 . 08 . 28</p><div class="sp-txt"><span class="sp-ln"><span class="sp-c" style="animation-delay: 0.45s; --t: 0.45s; --d: 0.160s">W</span><span class="sp-c" style="animation-delay: 0.61s; --t: 0.61s; --d: 0.160s">E</span><span class="sp-c" style="animation-delay: 0.77s; --t: 0.77s; --d: 0.160s">’</span><span class="sp-c" style="animation-delay: 0.93s; --t: 0.93s; --d: 0.160s">R</span><span class="sp-c" style="animation-delay: 1.09s; --t: 1.09s; --d: 0.560s">E</span></span><span class="sp-ln"><span class="sp-c" style="animation-delay: 1.65s; --t: 1.65s; --d: 0.160s">G</span><span class="sp-c" style="animation-delay: 1.81s; --t: 1.81s; --d: 0.160s">E</span><span class="sp-c" style="animation-delay: 1.97s; --t: 1.97s; --d: 0.160s">T</span><span class="sp-c" style="animation-delay: 2.13s; --t: 2.13s; --d: 0.160s">T</span><span class="sp-c" style="animation-delay: 2.29s; --t: 2.29s; --d: 0.160s">I</span><span class="sp-c" style="animation-delay: 2.45s; --t: 2.45s; --d: 0.160s">N</span><span class="sp-c" style="animation-delay: 2.61s; --t: 2.61s; --d: 0.560s">G</span></span><span class="sp-ln"><span class="sp-c" style="animation-delay: 3.17s; --t: 3.17s; --d: 0.160s">M</span><span class="sp-c" style="animation-delay: 3.33s; --t: 3.33s; --d: 0.160s">A</span><span class="sp-c" style="animation-delay: 3.49s; --t: 3.49s; --d: 0.160s">R</span><span class="sp-c" style="animation-delay: 3.65s; --t: 3.65s; --d: 0.160s">R</span><span class="sp-c" style="animation-delay: 3.81s; --t: 3.81s; --d: 0.160s">I</span><span class="sp-c" style="animation-delay: 3.97s; --t: 3.97s; --d: 0.160s">E</span><span class="sp-c sp-last" style="animation-delay: 4.13s; --t: 4.13s">D</span></span></div></div>
+<div class="splash" aria-hidden="true"><p class="sp-top" style="margin:0">THE WEDDING OF</p><p class="sp-bot" style="margin:0">2027 . 08 . 28</p><div class="sp-txt"><span class="sp-ln"><span class="sp-c" style="animation-delay: 0.45s; --t: 0.45s; --d: 0.120s">W</span><span class="sp-c" style="animation-delay: 0.57s; --t: 0.57s; --d: 0.120s">E</span><span class="sp-c" style="animation-delay: 0.69s; --t: 0.69s; --d: 0.120s">’</span><span class="sp-c" style="animation-delay: 0.81s; --t: 0.81s; --d: 0.120s">R</span><span class="sp-c" style="animation-delay: 0.93s; --t: 0.93s; --d: 0.420s">E</span></span><span class="sp-ln"><span class="sp-c" style="animation-delay: 1.35s; --t: 1.35s; --d: 0.120s">G</span><span class="sp-c" style="animation-delay: 1.47s; --t: 1.47s; --d: 0.120s">E</span><span class="sp-c" style="animation-delay: 1.59s; --t: 1.59s; --d: 0.120s">T</span><span class="sp-c" style="animation-delay: 1.71s; --t: 1.71s; --d: 0.120s">T</span><span class="sp-c" style="animation-delay: 1.83s; --t: 1.83s; --d: 0.120s">I</span><span class="sp-c" style="animation-delay: 1.95s; --t: 1.95s; --d: 0.120s">N</span><span class="sp-c" style="animation-delay: 2.07s; --t: 2.07s; --d: 0.420s">G</span></span><span class="sp-ln"><span class="sp-c" style="animation-delay: 2.49s; --t: 2.49s; --d: 0.120s">M</span><span class="sp-c" style="animation-delay: 2.61s; --t: 2.61s; --d: 0.120s">A</span><span class="sp-c" style="animation-delay: 2.73s; --t: 2.73s; --d: 0.120s">R</span><span class="sp-c" style="animation-delay: 2.85s; --t: 2.85s; --d: 0.120s">R</span><span class="sp-c" style="animation-delay: 2.97s; --t: 2.97s; --d: 0.120s">I</span><span class="sp-c" style="animation-delay: 3.09s; --t: 3.09s; --d: 0.120s">E</span><span class="sp-c sp-last" style="animation-delay: 3.21s; --t: 3.21s">D</span></span></div></div>
 <!-- COVER -->
 <section class="card olive" style="display: flex; flex-direction: column; align-items: center; padding: 80px 0 96px; text-align: center; background: #FFFFFF">
-<p class="hero-fade eb" style="margin: 0 0 14px; font-size: 11px; letter-spacing: 5px; padding-left: 5px; color: #939A78; animation-delay: 5.95s">THE WEDDING OF</p>
-<h1 style="margin: 0; font-family: 'Gowun Batang', serif; font-weight: 400; font-size: 27px; letter-spacing: 5px; color: #2A2A28"><span class="ch" style="animation-delay: 6.00s">저</span><span class="ch" style="animation-delay: 6.05s">희</span><span class="ch" style="animation-delay: 6.10s">,</span><span class="ch" style="animation-delay: 6.15s">&#160;</span><span class="ch" style="animation-delay: 6.20s">결</span><span class="ch" style="animation-delay: 6.25s">혼</span><span class="ch" style="animation-delay: 6.30s">합</span><span class="ch" style="animation-delay: 6.35s">니</span><span class="ch" style="animation-delay: 6.40s">다</span></h1>
+<h1 style="margin: 0; font-family: 'Gowun Batang', serif; font-weight: 400; font-size: 27px; letter-spacing: 5px; color: #2A2A28"><span class="ch" style="animation-delay: 4.30s">저</span><span class="ch" style="animation-delay: 4.35s">희</span><span class="ch" style="animation-delay: 4.40s">,</span><span class="ch" style="animation-delay: 4.45s">&#160;</span><span class="ch" style="animation-delay: 4.50s">결</span><span class="ch" style="animation-delay: 4.55s">혼</span><span class="ch" style="animation-delay: 4.60s">합</span><span class="ch" style="animation-delay: 4.65s">니</span><span class="ch" style="animation-delay: 4.70s">다</span></h1>
 <div class="hero-photo" style="position: relative; width: 100%; aspect-ratio: 4 / 5; margin-top: 36px">
 <div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; background: #EEEDE9">
 <div class="hero-img" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #6B6B67">[메인 사진]</div>
@@ -141,13 +141,13 @@ section.card{position:relative;margin:0}
 </div>
 <div class="hero-line" style="width: 1px; height: 44px; margin-top: 36px; background: #CFCDC8"></div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 28px">
-<p class="hero-name" style="margin: 0; font-size: 28px; letter-spacing: 12px; padding-left: 12px; animation-delay: 6.75s">방재윤</p>
-<p class="hero-fade" style="margin: 0; font-size: 14px; letter-spacing: 8px; padding-left: 8px; color: #4A4A46; animation-delay: 6.95s">그리고</p>
-<p class="hero-name" style="margin: 0; font-size: 28px; letter-spacing: 12px; padding-left: 12px; animation-delay: 7.10s">김정인</p>
+<p class="hero-name" style="margin: 0; font-size: 28px; letter-spacing: 12px; padding-left: 12px; animation-delay: 5.05s">방재윤</p>
+<p class="hero-fade" style="margin: 0; font-size: 14px; letter-spacing: 8px; padding-left: 8px; color: #4A4A46; animation-delay: 5.25s">그리고</p>
+<p class="hero-name" style="margin: 0; font-size: 28px; letter-spacing: 12px; padding-left: 12px; animation-delay: 5.40s">김정인</p>
 </div>
-<p class="hero-fade" style="margin: 36px 0 0; font-size: 14px; line-height: 2.1; letter-spacing: 1px; animation-delay: 7.40s">늦여름, 8월의 마지막 토요일<br>기쁜 마음을 담아 초대합니다</p>
-<p class="hero-fade" style="margin: 26px 0 0; padding: 16px 28px; border-top: 1px solid #E4E2DD; border-bottom: 1px solid #E4E2DD; font-size: 14px; line-height: 1.9; letter-spacing: 1px; color: #4A4A46; animation-delay: 7.55s">2027. 08. 28. 토요일 오후 3시<br>빌라드지디 청담</p>
-<div class="hero-fade" style="margin-top: 28px; animation-delay: 7.70s"><svg class="cue" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A8A86" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></div>
+<p class="hero-fade" style="margin: 36px 0 0; font-size: 14px; line-height: 2.1; letter-spacing: 1px; animation-delay: 5.70s">늦여름, 8월의 마지막 토요일<br>기쁜 마음을 담아 초대합니다</p>
+<p class="hero-fade" style="margin: 26px 0 0; padding: 16px 28px; border-top: 1px solid #E4E2DD; border-bottom: 1px solid #E4E2DD; font-size: 14px; line-height: 1.9; letter-spacing: 1px; color: #4A4A46; animation-delay: 5.85s">2027. 08. 28. 토요일 오후 3시<br>빌라드지디 청담</p>
+<div class="hero-fade" style="margin-top: 28px; animation-delay: 6.00s"><svg class="cue" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A8A86" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></div>
 </section>
 
 <!-- INVITATION -->
@@ -172,13 +172,6 @@ section.card{position:relative;margin:0}
 <p style="margin: 0; font-size: 18px; letter-spacing: 4px">김정인</p>
 </div>
 </div>
-<div style="width: 200px; height: 1px; background: #E4E2DD"></div>
-<div style="display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
-<p style="margin: 0; font-size: 12px; letter-spacing: 4px; color: #6B6B67">일 시</p>
-<p style="margin: 0; font-size: 15px">2027년 8월 28일 토요일 오후 3시</p>
-<p style="margin: 14px 0 0; font-size: 12px; letter-spacing: 4px; color: #6B6B67">장 소</p>
-<p style="margin: 0; font-size: 15px">빌라드지디 청담</p>
-</div>
 </section>
 
 <!-- COUPLE -->
@@ -201,8 +194,8 @@ section.card{position:relative;margin:0}
 </div>
 </div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; font-size: 14px; line-height: 2; text-align: center; color: #4A4A46">
-<p style="margin: 0; display: inline-block"><span style="display: block; white-space: nowrap">사랑은 참고 기다리는 것이라,</span><span style="display: block; white-space: nowrap">언제나 묵묵히 곁을 지켜 왔습니다.</span><span style="display: block; margin-top: 8px; text-align: center; font-size: 13px; letter-spacing: 2px; color: #6B6B67">- 신랑 방재윤 -</span></p>
-<p style="margin: 0; display: inline-block"><span style="display: block; white-space: nowrap">사랑은 친절한 것이라,</span><span style="display: block; white-space: nowrap">언제나 다정히 마음을 건넸습니다.</span><span style="display: block; margin-top: 8px; text-align: center; font-size: 13px; letter-spacing: 2px; color: #6B6B67">- 신부 김정인 -</span></p>
+<p style="margin: 0; display: inline-block"><span style="display: block; white-space: nowrap">사랑은 참고 기다리는 것이라,</span><span style="display: block; white-space: nowrap">언제나 묵묵히 곁을 지켜 왔습니다.</span><span style="display: block; margin-top: 8px; text-align: center; font-size: 13px; letter-spacing: 2px; color: #6B6B67">신랑 방재윤</span></p>
+<p style="margin: 0; display: inline-block"><span style="display: block; white-space: nowrap">사랑은 친절한 것이라,</span><span style="display: block; white-space: nowrap">언제나 다정히 마음을 건넸습니다.</span><span style="display: block; margin-top: 8px; text-align: center; font-size: 13px; letter-spacing: 2px; color: #6B6B67">신부 김정인</span></p>
 </div>
 </section>
 
@@ -211,7 +204,7 @@ section.card{position:relative;margin:0}
 <div class="deco" aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none"><svg aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; opacity: .5; mix-blend-mode: multiply"><filter id="pp23"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="23"/><feColorMatrix type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .07 0"/></filter><rect width="100%" height="100%" filter="url(#pp23)"/></svg></div>
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en">OUR STORY</p>
-<h2 class="sec-ko" style="margin: 0; font-size: 19px; font-weight: 400; letter-spacing: 5px; padding-left: 5px; color: #2A2A28; text-align: center; line-height: 1.5">재윤 <svg aria-hidden="true" width="0.62em" height="0.62em" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle; position: relative; top: -0.08em; overflow: visible"><path d="M12 21.2s-7.6-4.7-9.7-9.3C.8 8.5 2.9 4.4 6.8 4.4c2.2 0 3.8 1.2 5.2 3.1 1.4-1.9 3-3.1 5.2-3.1 3.9 0 6 4.1 4.5 7.5-2.1 4.6-9.7 9.3-9.7 9.3z" fill="#939A78"/></svg> 정인<br>이야기</h2>
+<h2 class="sec-ko" style="margin: 0; font-size: 19px; font-weight: 400; letter-spacing: 5px; padding-left: 5px; color: #2A2A28; text-align: center; line-height: 1.5">재윤 &amp; 정인<br>이야기</h2>
 <div class="sec-fil" style="display: flex; justify-content: center; margin-top: 10px"><span style="display: block; width: 28px; height: 1px; background: #939A78"></span></div>
 </div>
 <details class="story"><summary><span class="op">이야기 펼쳐보기</span><span class="cl">접기</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B6B67" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
@@ -222,12 +215,12 @@ section.card{position:relative;margin:0}
 <span style="font-family: 'Gowun Batang', serif; font-size: 16px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #939A78">2021</span>
 <span style="font-size: 13px; line-height: 1.7; color: #4A4A46; white-space: nowrap">초여름, 여의도에서<br>처음 만났고</span>
 </div>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #939A78; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 7px; height: 7px; margin-top: 1px; transform: rotate(45deg); background: #FFFFFF; border: 1px solid #939A78; box-sizing: border-box"></span></span>
 <span></span>
 </div>
 <div class="tl-item tl-r" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); align-items: start; padding-bottom: 0; margin-top: -6px; transition-delay: 0.20s">
 <span></span>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #939A78; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 7px; height: 7px; margin-top: 1px; transform: rotate(45deg); background: #FFFFFF; border: 1px solid #939A78; box-sizing: border-box"></span></span>
 <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left">
 <span style="font-family: 'Gowun Batang', serif; font-size: 16px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #939A78">2022</span>
 <span style="font-size: 13px; line-height: 1.7; color: #4A4A46; white-space: nowrap">서로를 천천히<br>알아갔으며</span>
@@ -238,12 +231,12 @@ section.card{position:relative;margin:0}
 <span style="font-family: 'Gowun Batang', serif; font-size: 16px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #939A78">2023</span>
 <span style="font-size: 13px; line-height: 1.7; color: #4A4A46; white-space: nowrap">같은 곳을<br>바라보기 시작했고</span>
 </div>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #939A78; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 7px; height: 7px; margin-top: 1px; transform: rotate(45deg); background: #FFFFFF; border: 1px solid #939A78; box-sizing: border-box"></span></span>
 <span></span>
 </div>
 <div class="tl-item tl-r" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); align-items: start; padding-bottom: 0; margin-top: -6px; transition-delay: 0.32s">
 <span></span>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #939A78; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 7px; height: 7px; margin-top: 1px; transform: rotate(45deg); background: #FFFFFF; border: 1px solid #939A78; box-sizing: border-box"></span></span>
 <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left">
 <span style="font-family: 'Gowun Batang', serif; font-size: 16px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #939A78">2024</span>
 <span style="font-size: 13px; line-height: 1.7; color: #4A4A46; white-space: nowrap">서로의 내일이<br>소중해졌으며</span>
@@ -254,19 +247,19 @@ section.card{position:relative;margin:0}
 <span style="font-family: 'Gowun Batang', serif; font-size: 16px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #939A78">2025</span>
 <span style="font-size: 13px; line-height: 1.7; color: #4A4A46; white-space: nowrap">두 가족에게<br>첫인사를 드렸고</span>
 </div>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #939A78; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 7px; height: 7px; margin-top: 1px; transform: rotate(45deg); background: #FFFFFF; border: 1px solid #939A78; box-sizing: border-box"></span></span>
 <span></span>
 </div>
 <div class="tl-item tl-r" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); align-items: start; padding-bottom: 0; margin-top: -6px; transition-delay: 1.00s">
 <span></span>
-<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 9px; height: 9px; border-radius: 5px; background: #FFFFFF; border: 1.5px solid #939A78; box-sizing: border-box"></span></span>
+<span style="display: flex; justify-content: center; padding-top: 8px"><span style="width: 7px; height: 7px; margin-top: 1px; transform: rotate(45deg); background: #FFFFFF; border: 1px solid #939A78; box-sizing: border-box"></span></span>
 <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left">
 <span style="font-family: 'Gowun Batang', serif; font-size: 16px; font-weight: 500; line-height: 1; letter-spacing: 1px; color: #939A78">2026</span>
 <span style="font-size: 13px; line-height: 1.7; color: #4A4A46; white-space: nowrap">겨울,<br>프로포즈를 받았으며</span>
 </div>
 </div>
 <div class="tl-item tl-end" style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding-top: 20px; transition-delay: 1.14s">
-<span style="width: 11px; height: 11px; border-radius: 6px; background: #939A78"></span>
+<span style="width: 8px; height: 8px; transform: rotate(45deg); background: #939A78"></span>
 <span style="font-family: 'Gowun Batang', serif; font-size: 17px; font-weight: 500; line-height: 1; color: #939A78">2027</span>
 <span style="font-size: 13px; line-height: 1.7; color: #4A4A46; white-space: nowrap">늦여름, 부부가 됩니다</span>
 </div>
@@ -274,43 +267,8 @@ section.card{position:relative;margin:0}
 </details>
 </section>
 
-<!-- CALENDAR -->
-<section data-rv="s5" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #FFFFFF">
-<div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en">WEDDING DAY</p>
-<h2 class="sec-ko" style="margin: 0; font-size: 19px; font-weight: 400; letter-spacing: 5px; padding-left: 5px; color: #2A2A28">예식 일시</h2>
-<div class="sec-fil" style="display: flex; justify-content: center; margin-top: 10px"><span style="display: block; width: 28px; height: 1px; background: #939A78"></span></div>
-</div>
-<p style="margin: 0 0 -22px; font-size: 19px; letter-spacing: 4px; padding-left: 4px; color: #2A2A28">8월</p>
-<div class="cal" style="width: 100%; max-width: 300px; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); row-gap: 14px; font-family: 'Gowun Batang', serif; font-size: 16px; text-align: center">
-<span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">S</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">M</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">T</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">W</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">T</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">F</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">S</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.375s">1</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.400s">2</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.425s">3</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.450s">4</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.475s">5</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.500s">6</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.525s">7</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.550s">8</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.575s">9</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.600s">10</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.625s">11</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.650s">12</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.675s">13</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.700s">14</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.725s">15</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.750s">16</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.775s">17</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.800s">18</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.825s">19</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.850s">20</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.875s">21</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.900s">22</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.925s">23</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.950s">24</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.975s">25</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 1.000s">26</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 1.025s">27</span><span style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin: 0 auto; border-radius: 15px; border: 1px solid #939A78; background: #939A78; box-sizing: border-box; color: #FFFFFF; transition-delay: 1.050s">28</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 1.075s">29</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 1.100s">30</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 1.125s">31</span>
-</div>
-<div style="display: flex; flex-direction: column; align-items: center; gap: 16px">
-<div style="display: flex; gap: 10px; align-items: flex-start">
-<div class="cd" style="width: 68px; height: 68px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; background: #FFFFFF; border: 1px solid #E8E6DF; border-radius: 2px">
-<span style="font-family: 'Gowun Batang', serif; font-size: 28px; line-height: 1; color: #2A2A28"><span id="cd_d">0</span></span>
-<span style="font-size: 11px; letter-spacing: 2px; color: #6B6B67">일</span>
-</div>
-<div class="cd" style="width: 68px; height: 68px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; background: #FFFFFF; border: 1px solid #E8E6DF; border-radius: 2px">
-<span style="font-family: 'Gowun Batang', serif; font-size: 28px; line-height: 1; color: #2A2A28"><span id="cd_h">0</span></span>
-<span style="font-size: 11px; letter-spacing: 2px; color: #6B6B67">시</span>
-</div>
-<div class="cd" style="width: 68px; height: 68px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; background: #FFFFFF; border: 1px solid #E8E6DF; border-radius: 2px">
-<span style="font-family: 'Gowun Batang', serif; font-size: 28px; line-height: 1; color: #2A2A28"><span id="cd_m">0</span></span>
-<span style="font-size: 11px; letter-spacing: 2px; color: #6B6B67">분</span>
-</div>
-<div class="cd" style="width: 68px; height: 68px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; background: #FFFFFF; border: 1px solid #E8E6DF; border-radius: 2px">
-<span style="font-family: 'Gowun Batang', serif; font-size: 28px; line-height: 1; color: #2A2A28"><span id="cd_s">0</span></span>
-<span style="font-size: 11px; letter-spacing: 2px; color: #6B6B67">초</span>
-</div>
-
-</div>
-<p style="margin: 0; font-size: 14px; color: #4A4A46">재윤 <svg aria-hidden="true" width="0.62em" height="0.62em" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle; position: relative; top: -0.08em; overflow: visible"><path d="M12 21.2s-7.6-4.7-9.7-9.3C.8 8.5 2.9 4.4 6.8 4.4c2.2 0 3.8 1.2 5.2 3.1 1.4-1.9 3-3.1 5.2-3.1 3.9 0 6 4.1 4.5 7.5-2.1 4.6-9.7 9.3-9.7 9.3z" fill="#939A78"/></svg> 정인의 결혼식이 <strong style="color: #2A2A28"><span id="dday">0</span>일</strong> 남았습니다</p>
-</div>
-</section>
-
 <!-- GALLERY -->
-<section data-rv="s7" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #F6F5F0">
+<section data-rv="s7" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #FFFFFF">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en">GALLERY</p>
 <h2 class="sec-ko" style="margin: 0; font-size: 19px; font-weight: 400; letter-spacing: 5px; padding-left: 5px; color: #2A2A28">우리의 순간</h2>
@@ -350,6 +308,22 @@ section.card{position:relative;margin:0}
 
 </div>
 <button type="button" id="galBtn" style="min-height: 44px; padding: 0 28px; border: 1px solid #CFCDC8; border-radius: 3px; background: #FFFFFF; font-size: 14px; color: #2A2A28">사진 더보기</button>
+</section>
+
+<!-- CALENDAR -->
+<section data-rv="s5" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #F6F5F0">
+<div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+<p class="sec-en">WEDDING DAY</p>
+<h2 class="sec-ko" style="margin: 0; font-size: 19px; font-weight: 400; letter-spacing: 5px; padding-left: 5px; color: #2A2A28">예식 일시</h2>
+<div class="sec-fil" style="display: flex; justify-content: center; margin-top: 10px"><span style="display: block; width: 28px; height: 1px; background: #939A78"></span></div>
+</div>
+<p style="margin: 0 0 -22px; font-size: 19px; letter-spacing: 4px; padding-left: 4px; color: #2A2A28">8월</p>
+<div class="cal" style="width: 100%; max-width: 300px; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); row-gap: 14px; font-family: 'Gowun Batang', serif; font-size: 16px; text-align: center">
+<span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">S</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">M</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">T</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">W</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">T</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">F</span><span style="font-size: 13px; letter-spacing: 1px; color: #2A2A28; padding-bottom: 6px; transition-delay: .3s">S</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.375s">1</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.400s">2</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.425s">3</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.450s">4</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.475s">5</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.500s">6</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.525s">7</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.550s">8</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.575s">9</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.600s">10</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.625s">11</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.650s">12</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.675s">13</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.700s">14</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.725s">15</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.750s">16</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.775s">17</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.800s">18</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.825s">19</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.850s">20</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.875s">21</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.900s">22</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.925s">23</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.950s">24</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 0.975s">25</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 1.000s">26</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 1.025s">27</span><span style="display: flex; align-items: center; justify-content: center; width: 26px; height: 30px; margin: 0 auto; border-bottom: 1.5px solid #939A78; box-sizing: border-box; color: #6E7556; font-weight: 700; transition-delay: 1.050s">28</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 1.075s">29</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 1.100s">30</span><span style="display: flex; align-items: center; justify-content: center; height: 30px; color: #2A2A28; transition-delay: 1.125s">31</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 16px">
+<p style="margin: 0; font-size: 14px; color: #4A4A46">재윤 &amp; 정인의 결혼식이 <strong style="color: #2A2A28"><span id="dday">0</span>일</strong> 남았습니다</p>
+</div>
 </section>
 
 <!-- LOCATION -->
@@ -404,22 +378,22 @@ section.card{position:relative;margin:0}
 <a href="https://map.naver.com/p/search/빌라드지디청담" style="display: flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid #E8E6DF; border-radius: 3px; font-size: 14px; text-decoration: none; background: #FFFFFF">네이버 지도</a>
 <a href="https://map.kakao.com/?q=빌라드지디청담" style="display: flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid #E8E6DF; border-radius: 3px; font-size: 14px; text-decoration: none; background: #FFFFFF">카카오맵</a>
 </div>
-<div style="width: 100%; max-width: 342px; display: flex; flex-direction: column; gap: 18px; font-size: 14px; line-height: 1.7">
-<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 1px solid #EAE8E4">
-<p style="margin: 0; font-weight: 700; color: #2A2A28">지하철</p>
+<div style="width: 100%; max-width: 342px; display: flex; flex-direction: column; gap: 22px; font-size: 14px; line-height: 1.8">
+<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 22px; border-bottom: 1px solid #EEECE6">
+<p style="margin: 0 0 2px; font-size: 12px; letter-spacing: 3px; color: #939A78">지하철</p>
 <p style="margin: 0">7호선 청담역 12번 출구에서<br>약 42m, 도보 1분</p>
-<p style="margin: 4px 0 0; font-size: 13px; color: #2A2A28">KTX 이용 시</p>
+<p style="margin: 6px 0 0; font-size: 13px; color: #4A4A46">KTX 이용 시</p>
 <p style="margin: 0; font-size: 13px; color: #6B6B67">서울역 → 4호선 총신대입구(이수)역<br>→ 7호선 환승 → 청담역</p>
 <p style="margin: 0; font-size: 13px; color: #6B6B67">수서역 → 3호선 고속터미널역<br>→ 7호선 환승 → 청담역</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 1px solid #EAE8E4">
-<p style="margin: 0; font-weight: 700; color: #2A2A28">버스</p>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 22px; border-bottom: 1px solid #EEECE6">
+<p style="margin: 0 0 2px; font-size: 12px; letter-spacing: 3px; color: #939A78">버스</p>
 <p style="margin: 0">청담역, 경기고교 정류장 하차, 도보 1분<br>(진흥아파트 방면)</p>
 <p style="margin: 0; font-size: 13px; color: #6B6B67">간선(파랑) 301, 343, 401</p>
 <p style="margin: 0; font-size: 13px; color: #6B6B67">지선(초록) 2415, 3414, 3426</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 1px solid #EAE8E4">
-<p style="margin: 0; font-weight: 700; color: #2A2A28">자가용</p>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 22px; border-bottom: 1px solid #EEECE6">
+<p style="margin: 0 0 2px; font-size: 12px; letter-spacing: 3px; color: #939A78">자가용</p>
 <p style="margin: 0">내비게이션에 빌라드지디 청담 또는<br>서울 강남구 학동로 519 입력</p>
 <p style="margin: 0; font-size: 13px; color: #6B6B67">전용 주차장과 발렛 주차 서비스를 운영하며<br>하객분들께는 3시간 무료 주차가 제공됩니다.</p>
 </div>
@@ -430,8 +404,29 @@ section.card{position:relative;margin:0}
 </div>
 </section>
 
+<!-- RSVP -->
+<section data-rv="s12" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #F6F5F0">
+<div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+<p class="sec-en">R.S.V.P.</p>
+<h2 class="sec-ko" style="margin: 0; font-size: 19px; font-weight: 400; letter-spacing: 5px; padding-left: 5px; color: #2A2A28">참석 여부 전달</h2>
+<div class="sec-fil" style="display: flex; justify-content: center; margin-top: 10px"><span style="display: block; width: 28px; height: 1px; background: #939A78"></span></div>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.9; text-align: center; color: #6B6B67">예식 중 코스 요리가 준비되어<br>참석 여부를 미리 알려 주시면<br>정성껏 자리를 마련하겠습니다.</p>
+<form id="rsvp" class="rsvp" novalidate>
+<div class="rf"><span class="rl">구분</span><div class="seg" data-k="side"><button type="button" data-v="신랑측">신랑측</button><button type="button" data-v="신부측">신부측</button></div></div>
+<div class="rf"><span class="rl">참석 여부</span><div class="seg" data-k="attend"><button type="button" data-v="참석">참석할게요</button><button type="button" data-v="불참">참석이 어려워요</button></div></div>
+<div class="rf"><label class="rl" for="rName">성함</label><input id="rName" name="name" type="text" autocomplete="name" placeholder="성함을 입력해 주세요"></div>
+<div class="rf rx"><label class="rl" for="rCount">인원 (본인 포함)</label><select id="rCount" name="count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+<div class="rf rx"><span class="rl">식사</span><div class="seg" data-k="meal"><button type="button" data-v="예정">예정</button><button type="button" data-v="안 함">안 함</button><button type="button" data-v="미정">미정</button></div></div>
+<div class="rf"><label class="rl" for="rMsg">전하실 말씀 (선택)</label><textarea id="rMsg" name="msg" rows="3" placeholder="축하의 한마디를 남겨 주세요"></textarea></div>
+<p id="rErr" class="rerr" role="alert"></p>
+<button type="submit" id="rBtn" class="rbtn">전달하기</button>
+</form>
+<p id="rDone" class="rdone" hidden>소중한 마음 전해 주셔서 감사합니다.<br>기쁜 날 뵙겠습니다.</p>
+</section>
+
 <!-- ACCOUNTS -->
-<section data-rv="s9" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #F6F5F0">
+<section data-rv="s9" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #FFFFFF">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en">ACCOUNT</p>
 <h2 class="sec-ko" style="margin: 0; font-size: 19px; font-weight: 400; letter-spacing: 5px; padding-left: 5px; color: #2A2A28">마음 전하실 곳</h2>
@@ -500,29 +495,8 @@ section.card{position:relative;margin:0}
 </div>
 </section>
 
-<!-- RSVP -->
-<section data-rv="s12" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #FFFFFF">
-<div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en">R.S.V.P.</p>
-<h2 class="sec-ko" style="margin: 0; font-size: 19px; font-weight: 400; letter-spacing: 5px; padding-left: 5px; color: #2A2A28">참석 여부 전달</h2>
-<div class="sec-fil" style="display: flex; justify-content: center; margin-top: 10px"><span style="display: block; width: 28px; height: 1px; background: #939A78"></span></div>
-</div>
-<p style="margin: 0; font-size: 14px; line-height: 1.9; text-align: center; color: #6B6B67">예식 중 코스 요리가 준비되어<br>참석 여부를 미리 알려 주시면<br>정성껏 자리를 마련하겠습니다.</p>
-<form id="rsvp" class="rsvp" novalidate>
-<div class="rf"><span class="rl">구분</span><div class="seg" data-k="side"><button type="button" data-v="신랑측">신랑측</button><button type="button" data-v="신부측">신부측</button></div></div>
-<div class="rf"><span class="rl">참석 여부</span><div class="seg" data-k="attend"><button type="button" data-v="참석">참석할게요</button><button type="button" data-v="불참">참석이 어려워요</button></div></div>
-<div class="rf"><label class="rl" for="rName">성함</label><input id="rName" name="name" type="text" autocomplete="name" placeholder="성함을 입력해 주세요"></div>
-<div class="rf rx"><label class="rl" for="rCount">인원 (본인 포함)</label><select id="rCount" name="count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
-<div class="rf rx"><span class="rl">식사</span><div class="seg" data-k="meal"><button type="button" data-v="예정">예정</button><button type="button" data-v="안 함">안 함</button><button type="button" data-v="미정">미정</button></div></div>
-<div class="rf"><label class="rl" for="rMsg">전하실 말씀 (선택)</label><textarea id="rMsg" name="msg" rows="3" placeholder="축하의 한마디를 남겨 주세요"></textarea></div>
-<p id="rErr" class="rerr" role="alert"></p>
-<button type="submit" id="rBtn" class="rbtn">전달하기</button>
-</form>
-<p id="rDone" class="rdone" hidden>소중한 마음 전해 주셔서 감사합니다.<br>기쁜 날 뵙겠습니다.</p>
-</section>
-
 <!-- CLOSING -->
-<section data-rv="s10" class="card reveal olive" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; text-align: center; background: #F6F5F0">
+<section data-rv="s10" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; text-align: center; background: #F6F5F0">
 <div class="deco" aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none"><svg aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; opacity: .5; mix-blend-mode: multiply"><filter id="pp29"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="29"/><feColorMatrix type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .07 0"/></filter><rect width="100%" height="100%" filter="url(#pp29)"/></svg></div>
 <p style="margin: 0; font-size: 16px; line-height: 1.8">서로의 가장 좋은 사람이 되어 살겠습니다.</p>
 <p style="margin: -16px 0 0; font-size: 14px; line-height: 1.9; color: #6B6B67">함께해 주시는 모든 분들께<br>깊이 감사드립니다.</p>
@@ -536,14 +510,14 @@ section.card{position:relative;margin:0}
 <a href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-//JJ//KO%0D%0ABEGIN%3AVEVENT%0D%0AUID%3Ajaeyun-jeongin-20270828%0D%0ADTSTAMP%3A20261128T000000Z%0D%0ADTSTART%3A20270828T060000Z%0D%0ADTEND%3A20270828T080000Z%0D%0ASUMMARY%3A%EB%B0%A9%EC%9E%AC%EC%9C%A4%20%E2%99%A5%20%EA%B9%80%EC%A0%95%EC%9D%B8%20%EA%B2%B0%ED%98%BC%EC%8B%9D%0D%0ALOCATION%3A%EB%B9%8C%EB%9D%BC%EB%93%9C%EC%A7%80%EB%94%94%20%EC%B2%AD%EB%8B%B4%20%28%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%ED%95%99%EB%8F%99%EB%A1%9C%20519%29%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A" download="wedding-jaeyun-jeongin.ics" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border: 1px solid #D9D7D0; border-radius: 3px; background: #FFFFFF; font-size: 14px; color: #2A2A28; text-decoration: none; font-family: inherit">캘린더에 추가</a>
 <button type="button" class="copy" data-copy="https://jaeyun-jeongin.github.io" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border: 1px solid #D9D7D0; border-radius: 3px; background: #FFFFFF; font-size: 14px; color: #2A2A28; text-decoration: none; font-family: inherit">링크 복사</button>
 </div>
-<p style="margin: 28px 0 0; font-size: 11px; letter-spacing: 2px; color: #A3A29C">JAEYOON &amp; JEONGIN · 2027.08.28</p>
+<p class="eb" style="margin: 28px 0 0; letter-spacing: 3px; color: #A3A29C">JAEYOON &amp; JEONGIN · 2027.08.28</p>
 </section>
 </main>
 <script>
 (function(){
   // reveal on scroll
   var secs=[].slice.call(document.querySelectorAll('section.reveal'));
-(function(){try{history.scrollRestoration='manual'}catch(e){}scrollTo(0,0);var d=document.documentElement,E=['touchmove','wheel','keydown'],f=function(){d.classList.add('skip');E.forEach(function(e){removeEventListener(e,f)})};setTimeout(function(){E.forEach(function(e){addEventListener(e,f,{passive:true})})},900);setTimeout(function(){E.forEach(function(e){removeEventListener(e,f)})},7000)})();
+(function(){try{history.scrollRestoration='manual'}catch(e){}scrollTo(0,0);var d=document.documentElement,E=['touchmove','wheel','keydown'],f=function(){d.classList.add('skip');E.forEach(function(e){removeEventListener(e,f)})};setTimeout(function(){E.forEach(function(e){addEventListener(e,f,{passive:true})})},900);setTimeout(function(){E.forEach(function(e){removeEventListener(e,f)})},5200)})();
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -15% 0px'});
     secs.forEach(function(s){io.observe(s);});
@@ -553,10 +527,6 @@ section.card{position:relative;margin:0}
   function pad(n){return (n<10?'0':'')+n;}
   function tick(){
     var left=Math.max(0,target-Date.now());
-    document.getElementById('cd_d').textContent=Math.floor(left/86400000);
-    document.getElementById('cd_h').textContent=pad(Math.floor(left/3600000)%24);
-    document.getElementById('cd_m').textContent=pad(Math.floor(left/60000)%60);
-    document.getElementById('cd_s').textContent=pad(Math.floor(left/1000)%60);
     document.getElementById('dday').textContent=Math.max(0,Math.ceil((Date.UTC(2027,7,27,15,0,0)-Date.now())/86400000));
   }
   tick(); setInterval(tick,1000);
