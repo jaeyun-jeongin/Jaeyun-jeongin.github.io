@@ -32,8 +32,8 @@ button{font-family:inherit;cursor:pointer}
 .reveal .cal>span{opacity:0;transform:scale(.4);transition:opacity .5s ease,transform .6s cubic-bezier(.34,1.56,.64,1)}.reveal.in .cal>span{opacity:1;transform:none}
 .reveal .cd{transform:rotateX(90deg);transition:transform .9s cubic-bezier(.34,1.4,.64,1)}.reveal.in .cd{transform:none}.reveal .cd:nth-child(2){transition-delay:.1s}.reveal .cd:nth-child(3){transition-delay:.2s}.reveal .cd:nth-child(4){transition-delay:.3s}
 .reveal .tile{opacity:0;transform:translateY(24px) scale(.92);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.reveal.in .tile{opacity:1;transform:none}
-.ch{display:inline-block;animation:ch .8s cubic-bezier(.2,.7,.2,1) both}
-@keyframes ch{from{opacity:0;filter:blur(8px);transform:translateY(16px)}}
+.ch{display:inline-block;-webkit-backface-visibility:hidden;animation:ch .8s cubic-bezier(.2,.7,.2,1) both}
+@keyframes ch{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero-photo{overflow:hidden;animation:wipe 1.5s cubic-bezier(.65,0,.25,1) 3.9s both}
 @keyframes wipe{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
 .hero-img{animation:zoomout 3.4s cubic-bezier(.2,.7,.2,1) 3.9s both}
