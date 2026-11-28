@@ -85,6 +85,15 @@ html.skip .ch,html.skip .hero-name,html.skip .hero-fade,html.skip .hero-photo,ht
 .rbtn{min-height:50px;border:0;border-radius:3px;background:#939A78;color:#FFFFFF;font-family:inherit;font-size:15px;letter-spacing:2px}
 .rbtn:disabled{opacity:.6}
 .rdone{margin:0;font-size:15px;line-height:1.9;text-align:center;color:#2A2A28}
+details.story{width:100%;max-width:330px;display:flex;flex-direction:column;align-items:center}
+details.story>summary{list-style:none;cursor:pointer;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 22px;border:1px solid #C9CDB5;border-radius:3px;font-size:14px;letter-spacing:1px;color:#4A4A46;background:transparent}
+details.story>summary::-webkit-details-marker{display:none}
+details.story>summary .cl{display:none}details.story[open]>summary .op{display:none}details.story[open]>summary .cl{display:inline}
+details.story>summary svg{transition:transform .3s}details.story[open]>summary svg{transform:rotate(180deg)}
+details.story[open]>summary{margin-bottom:40px}
+details.story[open] .tl-body{animation:storyIn .6s ease both}
+@keyframes storyIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+details.story .tl-item,details.story .tl-line{opacity:1!important;transform:none!important}
 main{background:#FFFFFF!important;padding:0}
 section.card{position:relative;margin:0}
 .sec-en{font-size:11px;letter-spacing:4px;padding-left:4px;color:#939A78;margin:0 0 2px}
@@ -199,7 +208,8 @@ section.card{position:relative;margin:0}
 <h2 class="sec-ko" style="margin: 0; font-size: 21px; font-weight: 500; letter-spacing: 3px; padding-left: 3px; color: #2A2A28; text-align: center; line-height: 1.5">재윤 <svg aria-hidden="true" width="0.62em" height="0.62em" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle; position: relative; top: -0.08em; overflow: visible"><path d="M12 21.2s-7.6-4.7-9.7-9.3C.8 8.5 2.9 4.4 6.8 4.4c2.2 0 3.8 1.2 5.2 3.1 1.4-1.9 3-3.1 5.2-3.1 3.9 0 6 4.1 4.5 7.5-2.1 4.6-9.7 9.3-9.7 9.3z" fill="#939A78"/></svg> 정인<br>이야기</h2>
 <div class="sec-fil" style="display: flex; justify-content: center; margin-top: 10px"><span style="display: block; width: 28px; height: 1px; background: #939A78"></span></div>
 </div>
-<div style="position: relative; width: 100%; max-width: 330px">
+<details class="story"><summary><span class="op">이야기 펼쳐보기</span><span class="cl">접기</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B6B67" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+<div class="tl-body" style="position: relative; width: 100%; max-width: 330px">
 <div aria-hidden="true" class="tl-line" style="position: absolute; left: 50%; top: 12px; bottom: 76px; width: 1px; margin-left: -0.5px; background: #939A7855"></div>
 <div class="tl-item tl-l" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); align-items: start; padding-bottom: 0; transition-delay: 0.14s">
 <div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end; text-align: right">
@@ -255,6 +265,7 @@ section.card{position:relative;margin:0}
 <span style="font-size: 13px; line-height: 1.7; color: #4A4A46; white-space: nowrap">늦여름, 부부가 됩니다</span>
 </div>
 </div>
+</details>
 </section>
 
 <!-- CALENDAR -->
@@ -289,37 +300,11 @@ section.card{position:relative;margin:0}
 </div>
 <p style="margin: 0; font-size: 14px; color: #4A4A46">재윤 <svg aria-hidden="true" width="0.62em" height="0.62em" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle; position: relative; top: -0.08em; overflow: visible"><path d="M12 21.2s-7.6-4.7-9.7-9.3C.8 8.5 2.9 4.4 6.8 4.4c2.2 0 3.8 1.2 5.2 3.1 1.4-1.9 3-3.1 5.2-3.1 3.9 0 6 4.1 4.5 7.5-2.1 4.6-9.7 9.3-9.7 9.3z" fill="#939A78"/></svg> 정인의 결혼식이 <strong style="color: #2A2A28"><span id="dday">0</span>일</strong> 남았습니다</p>
 </div>
-</section>
-
-<!-- PROGRAM -->
-<section data-rv="s6" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #EFF1E4">
-<div class="deco" aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none"><svg aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; opacity: .5; mix-blend-mode: multiply"><filter id="pp25"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="25"/><feColorMatrix type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .07 0"/></filter><rect width="100%" height="100%" filter="url(#pp25)"/></svg></div>
-<div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<p class="sec-en">PROGRAM</p>
-<h2 class="sec-ko" style="margin: 0; font-size: 21px; font-weight: 500; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">예식 안내</h2>
-<div class="sec-fil" style="display: flex; justify-content: center; margin-top: 10px"><span style="display: block; width: 28px; height: 1px; background: #939A78"></span></div>
-</div>
-<p style="margin: 0; font-size: 15px; line-height: 2; text-align: center">예식 중 앉으신 자리로 코스 요리가 준비됩니다.<br>식사와 함께 저희의 첫걸음을<br>가까이서 지켜봐 주세요.</p>
-<div style="width: 100%; max-width: 330px; display: flex; flex-direction: column; border-bottom: 1px solid #EAE8E4">
-<div style="display: flex; gap: 20px; align-items: flex-start; padding: 18px 0; border-top: 1px solid #EAE8E4">
-<p style="margin: 0; width: 44px; flex-shrink: 0; font-size: 13px; letter-spacing: 3px; color: #6B6B67">1부</p>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<p style="margin: 0; font-size: 15px">예식</p>
-<p style="margin: 0; font-size: 13px; line-height: 1.7; color: #4A4A46">오후 3시, 두 사람의 약속이 시작됩니다</p>
-</div>
-</div>
-<div style="display: flex; gap: 20px; align-items: flex-start; padding: 18px 0; border-top: 1px solid #EAE8E4">
-<p style="margin: 0; width: 44px; flex-shrink: 0; font-size: 13px; letter-spacing: 3px; color: #6B6B67">2부</p>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<p style="margin: 0; font-size: 15px">축하연</p>
-<p style="margin: 0; font-size: 13px; line-height: 1.7; color: #4A4A46">식사와 함께 감사 인사를 전합니다</p>
-</div>
-</div>
-</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.9; text-align: center; color: #6B6B67">예식 중 앉으신 자리로 코스 요리가 준비됩니다.</p>
 </section>
 
 <!-- GALLERY -->
-<section data-rv="s7" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #FFFFFF">
+<section data-rv="s7" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #EFF1E4">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en">GALLERY</p>
 <h2 class="sec-ko" style="margin: 0; font-size: 21px; font-weight: 500; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">우리의 순간</h2>
@@ -362,7 +347,7 @@ section.card{position:relative;margin:0}
 </section>
 
 <!-- LOCATION -->
-<section data-rv="s8" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #EFF1E4">
+<section data-rv="s8" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #FFFFFF">
 <div class="deco" aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none"><svg aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; opacity: .5; mix-blend-mode: multiply"><filter id="pp27"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="27"/><feColorMatrix type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .42  0 0 0 .07 0"/></filter><rect width="100%" height="100%" filter="url(#pp27)"/></svg></div>
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en">LOCATION</p>
@@ -440,7 +425,7 @@ section.card{position:relative;margin:0}
 </section>
 
 <!-- ACCOUNTS -->
-<section data-rv="s9" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #FFFFFF">
+<section data-rv="s9" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #EFF1E4">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en">ACCOUNT</p>
 <h2 class="sec-ko" style="margin: 0; font-size: 21px; font-weight: 500; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">마음 전하실 곳</h2>
@@ -510,13 +495,13 @@ section.card{position:relative;margin:0}
 </section>
 
 <!-- RSVP -->
-<section data-rv="s12" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #EFF1E4">
+<section data-rv="s12" class="card reveal" style="display: flex; flex-direction: column; align-items: center; padding: 100px 24px; gap: 44px; background: #FFFFFF">
 <div class="sec-h" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
 <p class="sec-en">R.S.V.P.</p>
 <h2 class="sec-ko" style="margin: 0; font-size: 21px; font-weight: 500; letter-spacing: 3px; padding-left: 3px; color: #2A2A28">참석 여부 전달</h2>
 <div class="sec-fil" style="display: flex; justify-content: center; margin-top: 10px"><span style="display: block; width: 28px; height: 1px; background: #939A78"></span></div>
 </div>
-<p style="margin: 0; font-size: 14px; line-height: 1.9; text-align: center; color: #6B6B67">예식 중 코스 요리가 준비되어<br>참석 여부를 미리 알려 주시면<br>정성껏 자리를 마련하겠습니다.</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.9; text-align: center; color: #6B6B67">참석 여부를 미리 알려 주시면<br>정성껏 자리를 마련하겠습니다.</p>
 <form id="rsvp" class="rsvp" novalidate>
 <div class="rf"><span class="rl">구분</span><div class="seg" data-k="side"><button type="button" data-v="신랑측">신랑측</button><button type="button" data-v="신부측">신부측</button></div></div>
 <div class="rf"><span class="rl">참석 여부</span><div class="seg" data-k="attend"><button type="button" data-v="참석">참석할게요</button><button type="button" data-v="불참">참석이 어려워요</button></div></div>
